@@ -204,21 +204,20 @@ const Projects = ({ projects, selectedCategory, setSelectedCategory }) => {
 
         {/* Projects Grid */}
         <motion.div
+          key={selectedCategory} // 필터 변경 시 전체 그리드 재렌더링
           variants={containerVariants}
           initial="hidden"
-          whileInView="visible"
+          animate="visible"
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          <AnimatePresence>
-            {filteredProjects.map((project) => (
-              <motion.div
-                key={project.id}
-                variants={itemVariants}
-                layout
-                whileHover={{ y: -5 }}
-                className="bg-white dark:bg-gray-900 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer"
-                onClick={() => setSelectedProject(project)}
-              >
+          {filteredProjects.map((project) => (
+            <motion.div
+              key={`${selectedCategory}-${project.id}`} // 카테고리별 고유 키
+              variants={itemVariants}
+              whileHover={{ y: -5 }}
+              className="bg-white dark:bg-gray-900 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer"
+              onClick={() => setSelectedProject(project)}
+            >
                 {/* Project Image */}
                 {project.images && project.images[0] && (
                   <div className="aspect-video bg-gray-100 dark:bg-gray-700 overflow-hidden">
@@ -316,7 +315,6 @@ const Projects = ({ projects, selectedCategory, setSelectedCategory }) => {
                 </div>
               </motion.div>
             ))}
-          </AnimatePresence>
         </motion.div>
       </div>
 
