@@ -43,7 +43,8 @@
                 },
                 {
                     "src": "images/projects/caos03.jpg",
-                    "title": "카오스 웹 - CCTV 아카이브"
+                    "title": "카오스 웹 - CCTV 아카이브",
+                    "featured": true
                 },
                 {
                     "src": "images/projects/caos04.jpg",
@@ -396,7 +397,8 @@
                 },
                 {
                     "src": "images/projects/elect02.jpg",
-                    "title": "2017 선거방송"
+                    "title": "2017 선거방송",
+                    "featured": true
                 },
                 {
                     "src": "images/projects/elect03.jpg",
@@ -448,7 +450,8 @@
                 },
                 {
                     "src": "images/projects/touchmbc03.jpg",
-                    "title": "터치MBC 멀티스크린"
+                    "title": "터치MBC 멀티스크린",
+                    "featured": true
                 }
             ],
             "links": {
@@ -558,7 +561,8 @@
                 },
                 {
                     "src": "images/projects/hrd08.jpg",
-                    "title": "세미나 운영"
+                    "title": "세미나 운영",
+                    "featured": true
                 }
             ],
             "links": {}
