@@ -107,3 +107,6 @@ dist/
 
 # Keep index.html for Vite development
 # index.html
+
+# macOS
+.DS_Store
