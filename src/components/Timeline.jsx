@@ -7,10 +7,6 @@ const Timeline = ({ projects }) => {
   const timelineRef = useRef(null)
   const isInView = useInView(timelineRef, { once: true, amount: 0.1 })
 
-  // Debug: projects 데이터 확인 (한 번만 실행)
-  useEffect(() => {
-    console.log('Timeline projects:', projects?.length || 0, 'projects loaded')
-  }, [projects])
 
   // projects가 없거나 빈 배열인 경우 처리
   if (!projects || projects.length === 0) {
