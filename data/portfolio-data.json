@@ -1,707 +1,629 @@
 {
-  "personalInfo": {
-    "name": "안경찬",
-    "nameEn": "Ahn Gyeong-chan",
-    "title": "Software Architect / Fullstack Developer / IT Instructor",
-    "location": "마포구 상암동, 서울",
-    "email": "joypinkgom@gmail.com",
-    "blog": "https://brunch.co.kr/@joypinkgom",
-    "profileImage": "images/profile_background.jpg"
-  },
-  "projects": [
-    {
-      "id": "project_museek",
-      "name": "MUSEEK(Music Seek) 프로젝트",
-      "nameEn": "MUSEEK(Music Seek)",
-      "period": "2025.01 - 진행중",
-      "status": "In Progress",
-      "role": "Project Manager",
-      "description": null,
-      "tasks": null,
-      "techStack": null,
-      "images": [],
-      "links": {}
+    "personalInfo": {
+        "name": "안경찬",
+        "nameEn": "Ahn Gyeong-chan",
+        "title": "Project Manager / Software Architect / Fullstack Developer / IT Instructor",
+        "location": "마포구 상암동, 서울",
+        "email": "joypinkgom@gmail.com",
+        "blog": "https://brunch.co.kr/@joypinkgom",
+        "profileImage": "images/profile_background.jpg"
     },
-    {
-      "id": "project_caos",
-      "name": "CCTV 자동관제 시스템",
-      "nameEn": "CAOS(CCTV Automated Observation System)",
-      "period": "2024.01 ~ 2024.12",
-      "status": "Complete",
-      "role": "Project Manager, DevOps",
-      "description": [
-        "카오스 웹 서비스",
-        "카오스 녹화 서비스",
-        "카오스 유관시스템 연계 서비스",
-        "카오스 AI 서비스",
-        "카오스 알리미 서비스"
-      ],
-      "tasks": [
-        "프로젝트 관리",
-        "기능 설계 및 서비스 아키텍처 수립",
-        "AI 장면분석 알고리즘 개발",
-        "AI를 통한 주요 CCTV 녹화영상 요약 리포트 생성 기능 개발"
-      ],
-      "techStack": "Web, NodeJs, Python, YOLO, LLM",
-      "images": [
+    "projects": [
         {
-          "src": "images/projects/caos01.jpg",
-          "title": "카오스 웹 서비스 아키텍처"
+            "id": "project_museek",
+            "name": "MUSEEK(Music Seek) 프로젝트",
+            "nameEn": "MUSEEK(Music Seek)",
+            "period": "2025.01 - 진행중",
+            "status": "In Progress",
+            "role": "Project Manager",
+            "description": null,
+            "tasks": null,
+            "techStack": null,
+            "images": [],
+            "links": {}
         },
         {
-          "src": "images/projects/caos02.jpg",
-          "title": "카오스 웹 - CCTV 실시간"
+            "id": "project_caos",
+            "name": "CCTV 자동관제 시스템",
+            "nameEn": "CAOS(CCTV Automated Observation System)",
+            "period": "2024.01 ~ 2024.12",
+            "status": "Complete",
+            "role": "Project Manager, DevOps",
+            "description": ["카오스 웹 서비스", "카오스 녹화 서비스", "카오스 유관시스템 연계 서비스", "카오스 AI 서비스", "카오스 알리미 서비스"],
+            "tasks": ["프로젝트 관리", "기능 설계 및 서비스 아키텍처 수립", "AI 장면분석 알고리즘 개발", "AI를 통한 주요 CCTV 녹화영상 요약 리포트 생성 기능 개발"],
+            "techStack": "Web, NodeJs, Python, YOLO, LLM",
+            "images": [
+                {
+                    "src": "images/projects/caos01.jpg",
+                    "title": "카오스 웹 서비스 아키텍처"
+                },
+                {
+                    "src": "images/projects/caos02.jpg",
+                    "title": "카오스 웹 - CCTV 실시간"
+                },
+                {
+                    "src": "images/projects/caos03.jpg",
+                    "title": "카오스 웹 - CCTV 아카이브"
+                },
+                {
+                    "src": "images/projects/caos04.jpg",
+                    "title": "카오스 웹 - CCTV 그리드"
+                },
+                {
+                    "src": "images/projects/caos05.jpg",
+                    "title": "카오스 아카이브 서비스 아키텍처"
+                },
+                {
+                    "src": "images/projects/caos06.jpg",
+                    "title": "카오스 아카이브 컨테이너 구조"
+                },
+                {
+                    "src": "images/projects/caos07.jpg",
+                    "title": "카오스 유관시스템 연계 서비스 아키텍처"
+                },
+                {
+                    "src": "images/projects/caos08.jpg",
+                    "title": "카오스 AI 서비스 아키텍처"
+                },
+                {
+                    "src": "images/projects/caos09.png",
+                    "title": "카오스 AI 흐름"
+                },
+                {
+                    "src": "images/projects/caos10.jpg",
+                    "title": "카오스 알리미 서비스 아키텍처"
+                },
+                {
+                    "src": "images/projects/caos11.jpg",
+                    "title": "카오스 알리미"
+                },
+                {
+                    "src": "images/projects/caos12.jpg",
+                    "title": "카오스 포스터"
+                },
+                {
+                    "src": "images/projects/caos13.jpg",
+                    "title": "카오스 웹 - CCTV 아카이브"
+                },
+                {
+                    "src": "images/projects/caos15.jpg",
+                    "title": "카오스 웹 - CCTV 실시간"
+                },
+                {
+                    "src": "images/projects/caos14.jpg",
+                    "title": "카오스 활용 사례"
+                },
+                {
+                    "src": "images/projects/caos16.png",
+                    "title": "카오스 활용 사례"
+                }
+            ],
+            "links": {
+                "blog": "https://brunch.co.kr/@joypinkgom/211"
+            }
         },
         {
-          "src": "images/projects/caos03.jpg",
-          "title": "카오스 웹 - CCTV 아카이브"
+            "id": "project_mbcnewssm",
+            "name": "MBC 디지털뉴스 서비스 관리",
+            "nameEn": "MBC Digital News Service Management",
+            "period": "2023.04 ~ 2024.12",
+            "status": "Complete",
+            "role": "Project Manager, DevOps",
+            "description": ["디지털뉴스 서비스 운영 및 기술 총괄", "디지털뉴스 시스템 개선", "디지털뉴스 구독자 확대", "디지털뉴스 콘텐츠 수익 개선"],
+            "tasks": [
+                "유튜브 보안 강화(물리 보안키 도입, 모니터링 봇 서비스 구축) 적용 후, 해킹사례 0건",
+                "효율적인 장비관리를 위한 정비실 구축 및 운영",
+                "디지털뉴스 콘텐츠 관리시스템 DB서버 이중화 도입(Failover 및 데이터 복구 개선)",
+                "동영상 녹화 솔루션 개선(Bitrate, De-interlace 개선)을 통한 클립 영상 화질 업그레이드",
+                "유튜브 구독자 530만 달성(언론사 국내 1위), 네이버 구독자 : 530만 달성",
+                "홈페이지 추천광고 개선을 통해 연 평균 수익(2023년:51.4%, 2024년:36.3%) 증가"
+            ],
+            "techStack": "Web, NodeJs, Azure, Oracle, JIRA, Confluence",
+            "images": [
+                {
+                    "src": "images/projects/mbcnewssm01.jpg",
+                    "title": "유튜브 모니터링 봇"
+                },
+                {
+                    "src": "images/projects/mbcnewssm02.jpg",
+                    "title": "물리 보안키 도입"
+                },
+                {
+                    "src": "images/projects/mbcnewssm03.jpg",
+                    "title": "DB서버 이중화"
+                },
+                {
+                    "src": "images/projects/mbcnewssm04.jpg",
+                    "title": "클립영상 화질개선"
+                }
+            ],
+            "links": {
+                "website": "https://imnews.imbc.com/",
+                "youtube": "https://www.youtube.com/@MBCNEWS11"
+            }
         },
         {
-          "src": "images/projects/caos04.jpg",
-          "title": "카오스 웹 - CCTV 그리드"
+            "id": "project_emp",
+            "name": "모바일 서비스 패키징 프로젝트",
+            "nameEn": "EMP(Efficient Mobile Service Packaging)",
+            "period": "2022.07 ~ 2023.01",
+            "status": "Complete",
+            "role": "Backend Developer, Technical Architect",
+            "description": [
+                "콘텐츠 통합 서비스를 빠르고 쉽게 빌드해주는 플랫폼",
+                "콘텐츠 관리 시스템과 앱(안드로이드/iOS)이 포함된 통합 서비스 배포",
+                "유튜브 콘텐츠를 기반으로 자동으로 콘텐츠 관리(등록/수정/삭제)"
+            ],
+            "tasks": [
+                "유튜브 콘텐츠를 유연하게 자동 수집할 수 있는 CMS 기반 수집 모듈 개발",
+                "MY MUSIC, MBC KIDS, MBC HEALTH 앱을 위한 백엔드 API, 푸시 모듈 개발",
+                "빠른 배포를 위한 이미지 기반의 클라우드(AWS) 인프라 구축"
+            ],
+            "techStack": "CMS(Wordpress), NodeJs, AWS, MySQL",
+            "images": [
+                {
+                    "src": "images/projects/emp01.jpg",
+                    "title": "EMP Architecture"
+                },
+                {
+                    "src": "images/projects/emp02.jpg",
+                    "title": "자동수집 관리"
+                },
+                {
+                    "src": "images/projects/emp03.jpg",
+                    "title": "EMP를 통해 생성된 CMS"
+                },
+                {
+                    "src": "images/projects/emp04.jpg",
+                    "title": "EMP를 통한 모바일 앱 서비스"
+                }
+            ],
+            "links": {
+                "blog": "https://brunch.co.kr/@joypinkgom/163",
+                "website": "https://withmbc.com"
+            }
         },
         {
-          "src": "images/projects/caos05.jpg",
-          "title": "카오스 아카이브 서비스 아키텍처"
+            "id": "project_14f",
+            "name": "14F 서비스 구축",
+            "nameEn": "14F Service",
+            "period": "2021.04 ~ 2022.05",
+            "status": "Complete",
+            "role": "Project Manager, Backend Developer",
+            "description": ["14F 콘텐츠를 위한 뉴스레터 웹 서비스", "모바일 앱(안드로이드/iOS) 서비스"],
+            "tasks": ["웹 서비스(뉴스레터) Project Management", "오픈소스(워드프레스) 기반의 콘텐츠 관리 시스템 개발", "앱을 위한 백엔드 API, 푸시 모듈 개발"],
+            "techStack": "CMS(Wordpress), NodeJs, AWS, MySQL",
+            "images": [
+                {
+                    "src": "images/projects/14f02.jpg",
+                    "title": "14F 서비스 소개"
+                },
+                {
+                    "src": "images/projects/14f03.jpg",
+                    "title": "the14f 홈페이지"
+                },
+                {
+                    "src": "images/projects/14f01.jpg",
+                    "title": "14F CMS 아키텍처"
+                }
+            ],
+            "links": {
+                "blog": "https://brunch.co.kr/@joypinkgom/153",
+                "website": "https://the14f.com",
+                "android": "https://play.google.com/store/apps/details?id=kr.co.mbc.mbc14f",
+                "ios": "https://apps.apple.com/kr/app/14f/id1572601926",
+                "youtube": "https://youtu.be/DiVoJZe6o9E"
+            }
         },
         {
-          "src": "images/projects/caos06.jpg",
-          "title": "카오스 아카이브 컨테이너 구조"
+            "id": "project_coddas",
+            "name": "콘텐츠 유통 데이터 분석 시스템",
+            "nameEn": "CODDAS(Contents Distribution Data Analysis System)",
+            "period": "2020.02 ~ 2021.03",
+            "status": "Complete",
+            "role": "Full Stack Developer, Technical Architect",
+            "description": [
+                "콘텐츠 유통을 통해 생성된 모든 데이터(수익, 시청률, 조회수, 시청자 반응 등)를 수집하여 분석 정보를 제공해 주는 서비스",
+                "Elastic Stack(ElasticSearch + Logstash + Kibana)을 기반의 웹, 앱(안드로이드/iOS) 서비스"
+            ],
+            "tasks": [
+                "프로젝트 기획 및 설계",
+                "인프라 구축",
+                "연계 및 수집 서비스 개발",
+                "프로그램 통합키 모듈 개발",
+                "웹, 앱(안드로이드) 서비스 개발",
+                "앱 메시지 발송 서비스 개발",
+                "유튜브 데이터(소비, 분석, 수익 등) 수집 개발"
+            ],
+            "techStack": "ElasticSearch, Logstash, NodeJs, Azure, Java(Android), Swift(iOS), MySQL",
+            "images": [
+                {
+                    "src": "images/projects/coddas01.jpg",
+                    "title": "CODDAS 웹 서비스"
+                },
+                {
+                    "src": "images/projects/coddas03.jpg",
+                    "title": "CODDAS 수집모듈"
+                },
+                {
+                    "src": "images/projects/coddas02.jpg",
+                    "title": "CODDAS 아키텍처"
+                }
+            ],
+            "links": {
+                "blog": ["https://brunch.co.kr/@joypinkgom/132", "https://brunch.co.kr/@joypinkgom/148", "https://brunch.co.kr/@joypinkgom/149"],
+                "website": "https://coddas.mbcrnd.com/",
+                "android": "https://play.google.com/store/apps/details?id=kr.co.mbc.coddas"
+            }
         },
         {
-          "src": "images/projects/caos07.jpg",
-          "title": "카오스 유관시스템 연계 서비스 아키텍처"
+            "id": "project_mbcnews",
+            "name": "MBC뉴스 온라인 서비스 개편",
+            "nameEn": "MBC News Online Service Renewal",
+            "period": "2019.02 ~ 2019.12",
+            "status": "Complete",
+            "role": "Project Manager, Full Stack Developer, DevOps",
+            "description": ["노후화된 MBC뉴스 웹/앱 서비스 개편 및 신규 개발", "MBC뉴스 서비스 사용성 개선", "수익화"],
+            "tasks": [
+                "프로젝트 운영(제안요청서 작성, 업체 선정, 프로젝트 품의)",
+                "프로젝트 관리(상세 요구사항 도출, 프로젝트 일정(WBS) 및 개발 업체 관리)",
+                "DevOps(프로젝트 소스 및 품질 관리)",
+                "프로젝트 기획, 설계, 개발, 테스트",
+                "뉴스 온라인 플랫폼 통계 API(NOPSA) 기획, 분석, 설계, 개발",
+                "웹/앱 라이브 송출 인코더 전환"
+            ],
+            "techStack": "Web, NodeJs, Azure, Oracle, JIRA",
+            "images": [
+                {
+                    "src": "images/projects/mbcnews01.jpg",
+                    "title": "MBCNEWS 웹 서비스"
+                },
+                {
+                    "src": "images/projects/mbcnews02.jpg",
+                    "title": "MBCNEWS 모바일앱, 워치앱"
+                },
+                {
+                    "src": "images/projects/mbcnews03.jpg",
+                    "title": "MBCNEWS 프로젝트 진척관리"
+                },
+                {
+                    "src": "images/projects/mbcnews07.jpg",
+                    "title": "MBCNEWS NOPSA"
+                },
+                {
+                    "src": "images/projects/mbcnews04.jpg",
+                    "title": "MBCNEWS NOPSA 아키텍처"
+                },
+                {
+                    "src": "images/projects/mbcnews05.jpg",
+                    "title": "MBCNEWS 웹 플레이어"
+                },
+                {
+                    "src": "images/projects/mbcnews08.jpg",
+                    "title": "MBCNEWS 수익화"
+                }
+            ],
+            "links": {
+                "blog": "https://brunch.co.kr/@joypinkgom/134",
+                "website": "https://imnews.imbc.com/",
+                "android": "https://play.google.com/store/apps/details?id=com.imbc.imnews.mbcnews",
+                "ios": "https://apps.apple.com/kr/app/mbc-%EB%89%B4%EC%8A%A4/id387713617"
+            }
         },
         {
-          "src": "images/projects/caos08.jpg",
-          "title": "카오스 AI 서비스 아키텍처"
+            "id": "project_onairscript",
+            "name": "실시간 방송자막 조회 시스템",
+            "nameEn": "Real-time Broadcast Subtitle System",
+            "period": "2018.04 ~ 2018.06",
+            "status": "Complete",
+            "role": "Full Stack Developer",
+            "description": ["실시간으로 방송 자막을 제공하는 웹 서비스", "지난 방송 자막을 다양한 형식으로 제공하는 웹 서비스"],
+            "tasks": ["프로젝트 기획, 설계, 개발, 테스트", "실시간 자막 서버, 프로그램 편성 서버 연계를 통한 웹소켓 실시간 데이터 처리 개발", "SPA 형식의 N-Screen 웹 서비스 개발"],
+            "techStack": "Web, AngularJs, NodeJs, MySQL",
+            "images": [
+                {
+                    "src": "images/projects/onairscript02.jpg",
+                    "title": "실시간 방송 자막 서비스"
+                },
+                {
+                    "src": "images/projects/onairscript03.jpg",
+                    "title": "지난 방송 자막 서비스"
+                },
+                {
+                    "src": "images/projects/onairscript01.jpg",
+                    "title": "실시간 방송 자막 서비스 아키텍처"
+                }
+            ],
+            "links": {
+                "website": "https://imnews.imbc.com/",
+                "android": "https://play.google.com/store/apps/details?id=com.imbc.imnews.mbcnews",
+                "ios": "https://apps.apple.com/kr/app/mbc-%EB%89%B4%EC%8A%A4/id387713617"
+            }
         },
         {
-          "src": "images/projects/caos09.png",
-          "title": "카오스 AI 흐름"
+            "id": "project_uhd",
+            "name": "UHD TV 부가서비스",
+            "nameEn": "UHD TV Additional Service",
+            "period": "2018.03 ~ 2018.12",
+            "status": "Complete",
+            "role": "Project Manager, DevOps",
+            "description": ["UHD TV를 연동하는 UHD 세컨드스크린 모바일 앱", "UHD 콘텐츠 및 소비 데이터를 활용한 개인 맞춤형 VOD/Clip 추천 시스템"],
+            "tasks": ["프로젝트 기획 및 상세 요구사항 도출", "프로젝트 일정(WBS) 및 개발 업체 관리"],
+            "techStack": "VueJs, Java(Android), Swift(iOS), ElasticStack, JIRA",
+            "images": [
+                {
+                    "src": "images/projects/uhd_2nd01.jpg",
+                    "title": "UHD2ND 아키텍처"
+                },
+                {
+                    "src": "images/projects/uhd_2nd02.jpg",
+                    "title": "UHD2ND 모바일 앱"
+                },
+                {
+                    "src": "images/projects/uhd_2nd03.jpg",
+                    "title": "UHD2ND TV 컨트롤"
+                },
+                {
+                    "src": "images/projects/uhd_recommend01.jpg",
+                    "title": "VOD추천시스템 아키텍처"
+                },
+                {
+                    "src": "images/projects/uhd_recommend02.jpg",
+                    "title": "VOD추천시스템 관리화면"
+                },
+                {
+                    "src": "images/projects/uhd_recommend03.jpg",
+                    "title": "VOD추천시스템 데이터 적용"
+                }
+            ],
+            "links": {}
         },
         {
-          "src": "images/projects/caos10.jpg",
-          "title": "카오스 알리미 서비스 아키텍처"
+            "id": "project_election2017",
+            "name": "2017 선거방송 컨트롤러",
+            "nameEn": "2017 Election Broadcasting Controller",
+            "period": "2017.04 ~ 2017.05",
+            "status": "Complete",
+            "role": "Client Developer, Operator",
+            "description": ["2017년 19대 대통령 선거방송에서 투표 데이터를 화면에 송출하는 컨트롤러 모듈"],
+            "tasks": ["컨트롤러 개발(스튜디오 LED 포맷, 사전투표 최초 발표 포맷)", "컨트롤러 운영(스튜디오 LED 포맷, 사전투표 최초 발표 포맷)"],
+            "techStack": "C#",
+            "images": [
+                {
+                    "src": "images/projects/elect01.jpg",
+                    "title": "2017 선거방송"
+                },
+                {
+                    "src": "images/projects/elect02.jpg",
+                    "title": "2017 선거방송"
+                },
+                {
+                    "src": "images/projects/elect03.jpg",
+                    "title": "2017 선거방송"
+                }
+            ],
+            "links": {}
         },
         {
-          "src": "images/projects/caos11.jpg",
-          "title": "카오스 알리미"
+            "id": "project_touchmbc",
+            "name": "모바일 참여 플랫폼",
+            "nameEn": "TouchMBC - Mobile Participation Platform",
+            "period": "2016.09 ~ 2018.02",
+            "status": "Complete",
+            "role": "Software Architect, Fullstack Developer, QA, Operator",
+            "description": ["모바일 콘텐츠 소통 플랫폼 프로젝트", "콘텐츠를 관리 서비스와 실시간 시청 및 소통이 가능한 모바일 앱 서비스"],
+            "tasks": [
+                "분석, 설계(회원관리, 공지사항관리, 디바이스정보 관리)",
+                "콘텐츠 관리 시스템 개발",
+                "반응형 웹 표준 UI 수립",
+                "터치MBC 모바일웹 개발",
+                "터치MBC 안드로이드 앱 개발",
+                "멀티스크린 플레이어 개발",
+                "모바일 사용자 성능/부하 테스트",
+                "터치MBC 소통중계 운영(MLB라이브, 쇼!음악중심, 생방송오늘아침, 평창동계올림픽)",
+                "모바일 서비스 분석(자사/타사 모바일 플랫폼, 모바일 사용 분석)"
+            ],
+            "techStack": "Material, AngularJs, Django, Android(Java), JMeter",
+            "images": [
+                {
+                    "src": "images/projects/touchmbc_cms01.jpg",
+                    "title": "터치MBC CMS"
+                },
+                {
+                    "src": "images/projects/touchmbc_cms02.jpg",
+                    "title": "터치MBC CMS 모바일"
+                },
+                {
+                    "src": "images/projects/touchmbc_test01.jpg",
+                    "title": "터치MBC 성능테스트"
+                },
+                {
+                    "src": "images/projects/touchmbc01.jpg",
+                    "title": "터치MBC"
+                },
+                {
+                    "src": "images/projects/touchmbc02.jpg",
+                    "title": "터치MBC 소통중계"
+                },
+                {
+                    "src": "images/projects/touchmbc03.jpg",
+                    "title": "터치MBC 멀티스크린"
+                }
+            ],
+            "links": {
+                "blog": ["https://brunch.co.kr/@joypinkgom/27", "https://brunch.co.kr/@joypinkgom/28", "https://brunch.co.kr/@joypinkgom/42"]
+            }
         },
         {
-          "src": "images/projects/caos12.jpg",
-          "title": "카오스 포스터"
+            "id": "project_ems",
+            "name": "Smart Green Solution",
+            "nameEn": "EMS(Energy Management System)",
+            "period": "2014.01 ~ 2016.05",
+            "status": "Complete",
+            "role": "Software Architect, Fullstack Developer, Project Leader",
+            "description": [
+                "LG CNS Smart Green Solution UX/UI 아키텍처 수립 및 구축",
+                "LG CNS Smart Green Solution(EMS Platform, 데이터 분석 도구) 개발",
+                "LG CNS Signage 아키텍처 수립 및 공통모듈 개발"
+            ],
+            "tasks": [
+                "Device Tier에서 수집 된 대량의 데이터의 에너지 관점 분석도구(수집/가공, 설정, 리포트) 개발",
+                "Device Tier의 수집된 데이터의 실시간 관제(모니터링) 시스템 관리 모듈 개발",
+                "사이니지의 컨텐츠 관리 시스템 아키텍처 수립 및 공통모듈 개발",
+                "HTML5 기반의 SPA 시스템 아키텍처를 구성하여 개발자 리딩",
+                "실시간 미디어(비디오, 오디오) 트랜스코딩 모듈 개발",
+                "분석도구의 리포트 기능을 확장하여, 다차원 분석 및 시각화 도구 개발"
+            ],
+            "techStack": "Spring(MVC/Batch), Multi-DB(Oracle, MSSQL, Postgre), HTML5, AngularJs, BackboneJs, dcJS(d3 + crossfilter), FFMpeg",
+            "images": [
+                {
+                    "src": "images/projects/ems01.jpg",
+                    "title": "EMS Platform"
+                },
+                {
+                    "src": "images/projects/ems02.jpg",
+                    "title": "EMS 관리페이지"
+                },
+                {
+                    "src": "images/projects/ems03.jpg",
+                    "title": "EMS BI 도구"
+                },
+                {
+                    "src": "images/projects/ems04.jpg",
+                    "title": "EMS 리포트"
+                },
+                {
+                    "src": "images/projects/ems05.jpg",
+                    "title": "EMS 다차원분석 리포트"
+                },
+                {
+                    "src": "images/projects/ems_siange01.jpg",
+                    "title": "사이니지 관리페이지"
+                },
+                {
+                    "src": "images/projects/ems_siange03.jpg",
+                    "title": "사이니지 스케쥴러"
+                },
+                {
+                    "src": "images/projects/ems_siange02.jpg",
+                    "title": "사이니지 트랜스코더"
+                }
+            ],
+            "links": {}
         },
         {
-          "src": "images/projects/caos13.jpg",
-          "title": "카오스 웹 - CCTV 아카이브"
+            "id": "project_hrd",
+            "name": "IT HRD",
+            "nameEn": "IT Human Resource Development",
+            "period": "2011.01 ~ 2013.12",
+            "status": "Complete",
+            "role": "IT Instructor",
+            "description": ["LG CNS, LG전자의 기술교육 과정 개발 및 강의"],
+            "tasks": [
+                "IT 구현역량 교육과정(클린코드, Refactoring, DesignPattern) 개발 및 강의",
+                "서울대학교 소프트웨어 응용 과정 개발 및 강의",
+                "임원기술세미나/Technology 테마특강 세미나 운영",
+                "HTML5, Jquery Mobile, Sencha Touch, NodeJs 과정 개발 및 강의",
+                "LG CNS 신입사원 기술교육 과정 개발 및 강의",
+                "LG전자 신입사원 기술교육 과정 개발 및 강의",
+                "LG전자, LG CNS IT 인증시험 문항출제 및 검토",
+                "LG전자 신입사원 기술교육 과정 개발 및 강의"
+            ],
+            "techStack": "Java/J2EE, DevOn F/W, HTML5(JavaScript/CSS), Refactoring, Desgin Pattern, NodeJs, TDD",
+            "images": [
+                {
+                    "src": "images/projects/hrd01.jpg",
+                    "title": "Web UI"
+                },
+                {
+                    "src": "images/projects/hrd02.jpg",
+                    "title": "클린코드"
+                },
+                {
+                    "src": "images/projects/hrd04.jpg",
+                    "title": "디자인패턴"
+                },
+                {
+                    "src": "images/projects/hrd05.jpg",
+                    "title": "TDD"
+                },
+                {
+                    "src": "images/projects/hrd06.jpg",
+                    "title": "NodeJs"
+                },
+                {
+                    "src": "images/projects/hrd07.jpg",
+                    "title": "서울대산학협력과정 소프트웨어공학"
+                },
+                {
+                    "src": "images/projects/hrd08.jpg",
+                    "title": "세미나 운영"
+                }
+            ],
+            "links": {}
         },
         {
-          "src": "images/projects/caos15.jpg",
-          "title": "카오스 웹 - CCTV 실시간"
+            "id": "project_softwarearchitect",
+            "name": "소프트웨어 아키텍처 수립 및 구축",
+            "nameEn": "Software Architecture Development",
+            "period": "2007.06 ~ 2010.12",
+            "status": "Complete",
+            "role": "Application Architect",
+            "description": ["LG계열사, 오픈마켓 SI프로젝트(J2EE, DevOn F/W)의 소프트웨어 아키텍처 수립 및 구축"],
+            "tasks": [
+                "LG화학 LG 화학 온실가스 배출원 관리 시스템, 소프트웨어 아키텍처 수립 및 구축",
+                "LG디스플레이 영업 서비스 포탈, 소프트웨어 아키텍처 수립 및 구축, 웹보안 점검",
+                "LG전자 lge.com v2.0, 소프트웨어 아키텍처 수립 및 구축",
+                "DevOn Analysis Designer 솔루션(RCP), 소프트웨어 아키텍처 수립 및 구축",
+                "LIG넥스원 방산원가 시스템, 소프트웨어 아키텍처 수립 및 구축",
+                "Lean개발방법론, 소프트웨어 아키텍처 수립 및 구축",
+                "LG CNS 개발공정지원시스템, 소프트웨어 아키텍처 수립 및 구축",
+                "LG CNS 모바일웹 UI프레임워크, 소프트웨어 아키텍처 수립 및 구축",
+                "LG CNS LWebGrid 솔루션(JavaScript UI Component), 아키텍처 수립 및 구축",
+                "LG CNS PBF_Web v2.0 솔루션(Middleware F/W), 아키텍처 수립 및 구축"
+            ],
+            "techStack": "Java/J2EE, DevOn F/W, RCP, JavaScript, CI, Test자동화, TDD, 웹보안",
+            "images": [],
+            "links": {}
         },
         {
-          "src": "images/projects/caos14.jpg",
-          "title": "카오스 활용 사례"
+            "id": "project_bpm",
+            "name": "BPM 유지보수",
+            "nameEn": "BPM System Maintenance",
+            "period": "2006.01 ~ 2007.05",
+            "status": "Complete",
+            "role": "System Maintenance",
+            "description": ["LG전자 BPM(핸디 소프트 BPM)의 유지보수 및 연계 모듈 개발"],
+            "tasks": ["LG전자 BPM 성능개선(DB튜닝 및 솔루션 성능개선)", "LG전자 Global ERP 시스템과 연계(Interface) 모듈 개발"],
+            "techStack": "Java/J2EE, 핸디소프트 BPM, DB성능 모니터링, Oracle DB 쿼리 튜닝",
+            "images": [],
+            "links": {}
         },
         {
-          "src": "images/projects/caos16.png",
-          "title": "카오스 활용 사례"
+            "id": "project_j2ee",
+            "name": "보급 판매 통합 시스템",
+            "nameEn": "Supply and Sales Integration System",
+            "period": "2004.01 ~ 2005.12",
+            "status": "Complete",
+            "role": "System Developer, System Maintenance",
+            "description": ["육군 복지단의 보급 판매 통합 시스템의 분석/설계 및 개발", "매장의 판매 데이터를 기반으로 제품의 주문, 재고 및 물류를 관리해주는 웹 기반의 서비스"],
+            "tasks": ["청구 모듈의 분석/설계, 자동 청구모듈 J2EE(EJB) 개발", "웹인증 보안모듈 ActiveX 개발", "청구 모듈의 대용량 데이터 베이스 성능 튜닝"],
+            "techStack": "Java/J2EE, EJB, Visual C++, MFC, ActiveX, DB성능 모니터링, Oracle DB 쿼리 튜닝",
+            "images": [],
+            "links": {}
+        },
+        {
+            "id": "project_mfc",
+            "name": "WCDMA(3G) NMS",
+            "nameEn": "WCDMA Network Management System",
+            "period": "2002.12 ~ 2003.11",
+            "status": "Complete",
+            "role": "Client Developer",
+            "description": ["SK텔레콤 WCDMA 관제 시스템 개발(관제 월보드용)"],
+            "tasks": ["WCDMA NMS Client 개발", "WCDMA ActiveX 개발(관제 Map Module using Flash component)", "WCDMA Web NMS 개발(JSP & Servlet)"],
+            "techStack": "Visaul C++, MFC, ActiveX, Servlet/JSP, Flash",
+            "images": [],
+            "links": {}
         }
-      ],
-      "links": {
-        "blog": "https://brunch.co.kr/@joypinkgom/211"
-      }
-    },
-    {
-      "id": "project_mbcnewssm",
-      "name": "MBC 디지털뉴스 서비스 관리",
-      "nameEn": "MBC Digital News Service Management",
-      "period": "2023.04 ~ 2024.12",
-      "status": "Complete",
-      "role": "Project Manager, DevOps",
-      "description": [
-        "디지털뉴스 서비스 운영 및 기술 총괄",
-        "디지털뉴스 시스템 개선",
-        "디지털뉴스 구독자 확대",
-        "디지털뉴스 콘텐츠 수익 개선"
-      ],
-      "tasks": [
-        "유튜브 보안 강화(물리 보안키 도입, 모니터링 봇 서비스 구축) 적용 후, 해킹사례 0건",
-        "효율적인 장비관리를 위한 정비실 구축 및 운영",
-        "디지털뉴스 콘텐츠 관리시스템 DB서버 이중화 도입(Failover 및 데이터 복구 개선)",
-        "동영상 녹화 솔루션 개선(Bitrate, De-interlace 개선)을 통한 클립 영상 화질 업그레이드",
-        "유튜브 구독자 530만 달성(언론사 국내 1위), 네이버 구독자 : 530만 달성",
-        "홈페이지 추천광고 개선을 통해 연 평균 수익(2023년:51.4%, 2024년:36.3%) 증가"
-      ],
-      "techStack": "Web, NodeJs, Azure, Oracle, JIRA, Confluence",
-      "images": [
-        {
-          "src": "images/projects/mbcnewssm01.jpg",
-          "title": "유튜브 모니터링 봇"
-        },
-        {
-          "src": "images/projects/mbcnewssm02.jpg",
-          "title": "물리 보안키 도입"
-        },
-        {
-          "src": "images/projects/mbcnewssm03.jpg",
-          "title": "DB서버 이중화"
-        },
-        {
-          "src": "images/projects/mbcnewssm04.jpg",
-          "title": "클립영상 화질개선"
-        }
-      ],
-      "links": {
-        "website": "https://imnews.imbc.com/",
-        "youtube": "https://www.youtube.com/@MBCNEWS11"
-      }
-    },
-    {
-      "id": "project_emp",
-      "name": "모바일 서비스 패키징 프로젝트",
-      "nameEn": "EMP(Efficient Mobile Service Packaging)",
-      "period": "2022.07 ~ 2023.01",
-      "status": "Complete",
-      "role": "Backend Developer, Technical Architect",
-      "description": [
-        "콘텐츠 통합 서비스를 빠르고 쉽게 빌드해주는 플랫폼",
-        "콘텐츠 관리 시스템과 앱(안드로이드/iOS)이 포함된 통합 서비스 배포",
-        "유튜브 콘텐츠를 기반으로 자동으로 콘텐츠 관리(등록/수정/삭제)"
-      ],
-      "tasks": [
-        "유튜브 콘텐츠를 유연하게 자동 수집할 수 있는 CMS 기반 수집 모듈 개발",
-        "MY MUSIC, MBC KIDS, MBC HEALTH 앱을 위한 백엔드 API, 푸시 모듈 개발",
-        "빠른 배포를 위한 이미지 기반의 클라우드(AWS) 인프라 구축"
-      ],
-      "techStack": "CMS(Wordpress), NodeJs, AWS, MySQL",
-      "images": [
-        {
-          "src": "images/projects/emp01.jpg",
-          "title": "EMP Architecture"
-        },
-        {
-          "src": "images/projects/emp02.jpg",
-          "title": "자동수집 관리"
-        },
-        {
-          "src": "images/projects/emp03.jpg",
-          "title": "EMP를 통해 생성된 CMS"
-        },
-        {
-          "src": "images/projects/emp04.jpg",
-          "title": "EMP를 통한 모바일 앱 서비스"
-        }
-      ],
-      "links": {
-        "blog": "https://brunch.co.kr/@joypinkgom/163",
-        "website": "https://withmbc.com"
-      }
-    },
-    {
-      "id": "project_14f",
-      "name": "14F 서비스 구축",
-      "nameEn": "14F Service",
-      "period": "2021.04 ~ 2022.05",
-      "status": "Complete",
-      "role": "Project Manager, Backend Developer",
-      "description": [
-        "14F 콘텐츠를 위한 뉴스레터 웹 서비스",
-        "모바일 앱(안드로이드/iOS) 서비스"
-      ],
-      "tasks": [
-        "웹 서비스(뉴스레터) Project Management",
-        "오픈소스(워드프레스) 기반의 콘텐츠 관리 시스템 개발",
-        "앱을 위한 백엔드 API, 푸시 모듈 개발"
-      ],
-      "techStack": "CMS(Wordpress), NodeJs, AWS, MySQL",
-      "images": [
-        {
-          "src": "images/projects/14f02.jpg",
-          "title": "14F 서비스 소개"
-        },
-        {
-          "src": "images/projects/14f03.jpg",
-          "title": "the14f 홈페이지"
-        },
-        {
-          "src": "images/projects/14f01.jpg",
-          "title": "14F CMS 아키텍처"
-        }
-      ],
-      "links": {
-        "blog": "https://brunch.co.kr/@joypinkgom/153",
-        "website": "https://the14f.com",
-        "android": "https://play.google.com/store/apps/details?id=kr.co.mbc.mbc14f",
-        "ios": "https://apps.apple.com/kr/app/14f/id1572601926",
-        "youtube": "https://youtu.be/DiVoJZe6o9E"
-      }
-    },
-    {
-      "id": "project_coddas",
-      "name": "콘텐츠 유통 데이터 분석 시스템",
-      "nameEn": "CODDAS(Contents Distribution Data Analysis System)",
-      "period": "2020.02 ~ 2021.03",
-      "status": "Complete",
-      "role": "Full Stack Developer, Technical Architect",
-      "description": [
-        "콘텐츠 유통을 통해 생성된 모든 데이터(수익, 시청률, 조회수, 시청자 반응 등)를 수집하여 분석 정보를 제공해 주는 서비스",
-        "Elastic Stack(ElasticSearch + Logstash + Kibana)을 기반의 웹, 앱(안드로이드/iOS) 서비스"
-      ],
-      "tasks": [
-        "프로젝트 기획 및 설계",
-        "인프라 구축",
-        "연계 및 수집 서비스 개발",
-        "프로그램 통합키 모듈 개발",
-        "웹, 앱(안드로이드) 서비스 개발",
-        "앱 메시지 발송 서비스 개발",
-        "유튜브 데이터(소비, 분석, 수익 등) 수집 개발"
-      ],
-      "techStack": "ElasticSearch, Logstash, NodeJs, Azure, Java(Android), Swift(iOS), MySQL",
-      "images": [
-        {
-          "src": "images/projects/coddas01.jpg",
-          "title": "CODDAS 웹 서비스"
-        },
-        {
-          "src": "images/projects/coddas03.jpg",
-          "title": "CODDAS 수집모듈"
-        },
-        {
-          "src": "images/projects/coddas02.jpg",
-          "title": "CODDAS 아키텍처"
-        }
-      ],
-      "links": {
-        "blog": [
-          "https://brunch.co.kr/@joypinkgom/132",
-          "https://brunch.co.kr/@joypinkgom/148",
-          "https://brunch.co.kr/@joypinkgom/149"
-        ],
-        "website": "https://coddas.mbcrnd.com/",
-        "android": "https://play.google.com/store/apps/details?id=kr.co.mbc.coddas"
-      }
-    },
-    {
-      "id": "project_mbcnews",
-      "name": "MBC뉴스 온라인 서비스 개편",
-      "nameEn": "MBC News Online Service Renewal",
-      "period": "2019.02 ~ 2019.12",
-      "status": "Complete",
-      "role": "Project Manager, Full Stack Developer, DevOps",
-      "description": [
-        "노후화된 MBC뉴스 웹/앱 서비스 개편 및 신규 개발",
-        "MBC뉴스 서비스 사용성 개선",
-        "수익화"
-      ],
-      "tasks": [
-        "프로젝트 운영(제안요청서 작성, 업체 선정, 프로젝트 품의)",
-        "프로젝트 관리(상세 요구사항 도출, 프로젝트 일정(WBS) 및 개발 업체 관리)",
-        "DevOps(프로젝트 소스 및 품질 관리)",
-        "프로젝트 기획, 설계, 개발, 테스트",
-        "뉴스 온라인 플랫폼 통계 API(NOPSA) 기획, 분석, 설계, 개발",
-        "웹/앱 라이브 송출 인코더 전환"
-      ],
-      "techStack": "Web, NodeJs, Azure, Oracle, JIRA",
-      "images": [
-        {
-          "src": "images/projects/mbcnews01.jpg",
-          "title": "MBCNEWS 웹 서비스"
-        },
-        {
-          "src": "images/projects/mbcnews02.jpg",
-          "title": "MBCNEWS 모바일앱, 워치앱"
-        },
-        {
-          "src": "images/projects/mbcnews03.jpg",
-          "title": "MBCNEWS 프로젝트 진척관리"
-        },
-        {
-          "src": "images/projects/mbcnews07.jpg",
-          "title": "MBCNEWS NOPSA"
-        },
-        {
-          "src": "images/projects/mbcnews04.jpg",
-          "title": "MBCNEWS NOPSA 아키텍처"
-        },
-        {
-          "src": "images/projects/mbcnews05.jpg",
-          "title": "MBCNEWS 웹 플레이어"
-        },
-        {
-          "src": "images/projects/mbcnews08.jpg",
-          "title": "MBCNEWS 수익화"
-        }
-      ],
-      "links": {
-        "blog": "https://brunch.co.kr/@joypinkgom/134",
-        "website": "https://imnews.imbc.com/",
-        "android": "https://play.google.com/store/apps/details?id=com.imbc.imnews.mbcnews",
-        "ios": "https://apps.apple.com/kr/app/mbc-%EB%89%B4%EC%8A%A4/id387713617"
-      }
-    },
-    {
-      "id": "project_onairscript",
-      "name": "실시간 방송자막 조회 시스템",
-      "nameEn": "Real-time Broadcast Subtitle System",
-      "period": "2018.04 ~ 2018.06",
-      "status": "Complete",
-      "role": "Full Stack Developer",
-      "description": [
-        "실시간으로 방송 자막을 제공하는 웹 서비스",
-        "지난 방송 자막을 다양한 형식으로 제공하는 웹 서비스"
-      ],
-      "tasks": [
-        "프로젝트 기획, 설계, 개발, 테스트",
-        "실시간 자막 서버, 프로그램 편성 서버 연계를 통한 웹소켓 실시간 데이터 처리 개발",
-        "SPA 형식의 N-Screen 웹 서비스 개발"
-      ],
-      "techStack": "Web, AngularJs, NodeJs, MySQL",
-      "images": [
-        {
-          "src": "images/projects/onairscript02.jpg",
-          "title": "실시간 방송 자막 서비스"
-        },
-        {
-          "src": "images/projects/onairscript03.jpg",
-          "title": "지난 방송 자막 서비스"
-        },
-        {
-          "src": "images/projects/onairscript01.jpg",
-          "title": "실시간 방송 자막 서비스 아키텍처"
-        }
-      ],
-      "links": {
-        "website": "https://imnews.imbc.com/",
-        "android": "https://play.google.com/store/apps/details?id=com.imbc.imnews.mbcnews",
-        "ios": "https://apps.apple.com/kr/app/mbc-%EB%89%B4%EC%8A%A4/id387713617"
-      }
-    },
-    {
-      "id": "project_uhd",
-      "name": "UHD TV 부가서비스",
-      "nameEn": "UHD TV Additional Service",
-      "period": "2018.03 ~ 2018.12",
-      "status": "Complete",
-      "role": "Project Manager, DevOps",
-      "description": [
-        "UHD TV를 연동하는 UHD 세컨드스크린 모바일 앱",
-        "UHD 콘텐츠 및 소비 데이터를 활용한 개인 맞춤형 VOD/Clip 추천 시스템"
-      ],
-      "tasks": [
-        "프로젝트 기획 및 상세 요구사항 도출",
-        "프로젝트 일정(WBS) 및 개발 업체 관리"
-      ],
-      "techStack": "VueJs, Java(Android), Swift(iOS), ElasticStack, JIRA",
-      "images": [
-        {
-          "src": "images/projects/uhd_2nd01.jpg",
-          "title": "UHD2ND 아키텍처"
-        },
-        {
-          "src": "images/projects/uhd_2nd02.jpg",
-          "title": "UHD2ND 모바일 앱"
-        },
-        {
-          "src": "images/projects/uhd_2nd03.jpg",
-          "title": "UHD2ND TV 컨트롤"
-        },
-        {
-          "src": "images/projects/uhd_recommend01.jpg",
-          "title": "VOD추천시스템 아키텍처"
-        },
-        {
-          "src": "images/projects/uhd_recommend02.jpg",
-          "title": "VOD추천시스템 관리화면"
-        },
-        {
-          "src": "images/projects/uhd_recommend03.jpg",
-          "title": "VOD추천시스템 데이터 적용"
-        }
-      ],
-      "links": {}
-    },
-    {
-      "id": "project_election2017",
-      "name": "2017 선거방송 컨트롤러",
-      "nameEn": "2017 Election Broadcasting Controller",
-      "period": "2017.04 ~ 2017.05",
-      "status": "Complete",
-      "role": "Client Developer, Operator",
-      "description": [
-        "2017년 19대 대통령 선거방송에서 투표 데이터를 화면에 송출하는 컨트롤러 모듈"
-      ],
-      "tasks": [
-        "컨트롤러 개발(스튜디오 LED 포맷, 사전투표 최초 발표 포맷)",
-        "컨트롤러 운영(스튜디오 LED 포맷, 사전투표 최초 발표 포맷)"
-      ],
-      "techStack": "C#",
-      "images": [
-        {
-          "src": "images/projects/elect01.jpg",
-          "title": "2017 선거방송"
-        },
-        {
-          "src": "images/projects/elect02.jpg",
-          "title": "2017 선거방송"
-        },
-        {
-          "src": "images/projects/elect03.jpg",
-          "title": "2017 선거방송"
-        }
-      ],
-      "links": {}
-    },
-    {
-      "id": "project_touchmbc",
-      "name": "모바일 참여 플랫폼",
-      "nameEn": "TouchMBC - Mobile Participation Platform",
-      "period": "2016.09 ~ 2018.02",
-      "status": "Complete",
-      "role": "Software Architect, Fullstack Developer, QA, Operator",
-      "description": [
-        "모바일 콘텐츠 소통 플랫폼 프로젝트",
-        "콘텐츠를 관리 서비스와 실시간 시청 및 소통이 가능한 모바일 앱 서비스"
-      ],
-      "tasks": [
-        "분석, 설계(회원관리, 공지사항관리, 디바이스정보 관리)",
-        "콘텐츠 관리 시스템 개발",
-        "반응형 웹 표준 UI 수립",
-        "터치MBC 모바일웹 개발",
-        "터치MBC 안드로이드 앱 개발",
-        "멀티스크린 플레이어 개발",
-        "모바일 사용자 성능/부하 테스트",
-        "터치MBC 소통중계 운영(MLB라이브, 쇼!음악중심, 생방송오늘아침, 평창동계올림픽)",
-        "모바일 서비스 분석(자사/타사 모바일 플랫폼, 모바일 사용 분석)"
-      ],
-      "techStack": "Material, AngularJs, Django, Android(Java), JMeter",
-      "images": [
-        {
-          "src": "images/projects/touchmbc_cms01.jpg",
-          "title": "터치MBC CMS"
-        },
-        {
-          "src": "images/projects/touchmbc_cms02.jpg",
-          "title": "터치MBC CMS 모바일"
-        },
-        {
-          "src": "images/projects/touchmbc_test01.jpg",
-          "title": "터치MBC 성능테스트"
-        },
-        {
-          "src": "images/projects/touchmbc01.jpg",
-          "title": "터치MBC"
-        },
-        {
-          "src": "images/projects/touchmbc02.jpg",
-          "title": "터치MBC 소통중계"
-        },
-        {
-          "src": "images/projects/touchmbc03.jpg",
-          "title": "터치MBC 멀티스크린"
-        }
-      ],
-      "links": {
-        "blog": [
-          "https://brunch.co.kr/@joypinkgom/27",
-          "https://brunch.co.kr/@joypinkgom/28",
-          "https://brunch.co.kr/@joypinkgom/42"
-        ]
-      }
-    },
-    {
-      "id": "project_ems",
-      "name": "Smart Green Solution",
-      "nameEn": "EMS(Energy Management System)",
-      "period": "2014.01 ~ 2016.05",
-      "status": "Complete",
-      "role": "Software Architect, Fullstack Developer, Project Leader",
-      "description": [
-        "LG CNS Smart Green Solution UX/UI 아키텍처 수립 및 구축",
-        "LG CNS Smart Green Solution(EMS Platform, 데이터 분석 도구) 개발",
-        "LG CNS Signage 아키텍처 수립 및 공통모듈 개발"
-      ],
-      "tasks": [
-        "Device Tier에서 수집 된 대량의 데이터의 에너지 관점 분석도구(수집/가공, 설정, 리포트) 개발",
-        "Device Tier의 수집된 데이터의 실시간 관제(모니터링) 시스템 관리 모듈 개발",
-        "사이니지의 컨텐츠 관리 시스템 아키텍처 수립 및 공통모듈 개발",
-        "HTML5 기반의 SPA 시스템 아키텍처를 구성하여 개발자 리딩",
-        "실시간 미디어(비디오, 오디오) 트랜스코딩 모듈 개발",
-        "분석도구의 리포트 기능을 확장하여, 다차원 분석 및 시각화 도구 개발"
-      ],
-      "techStack": "Spring(MVC/Batch), Multi-DB(Oracle, MSSQL, Postgre), HTML5, AngularJs, BackboneJs, dcJS(d3 + crossfilter), FFMpeg",
-      "images": [
-        {
-          "src": "images/projects/ems01.jpg",
-          "title": "EMS Platform"
-        },
-        {
-          "src": "images/projects/ems02.jpg",
-          "title": "EMS 관리페이지"
-        },
-        {
-          "src": "images/projects/ems03.jpg",
-          "title": "EMS BI 도구"
-        },
-        {
-          "src": "images/projects/ems04.jpg",
-          "title": "EMS 리포트"
-        },
-        {
-          "src": "images/projects/ems05.jpg",
-          "title": "EMS 다차원분석 리포트"
-        },
-        {
-          "src": "images/projects/ems_siange01.jpg",
-          "title": "사이니지 관리페이지"
-        },
-        {
-          "src": "images/projects/ems_siange03.jpg",
-          "title": "사이니지 스케쥴러"
-        },
-        {
-          "src": "images/projects/ems_siange02.jpg",
-          "title": "사이니지 트랜스코더"
-        }
-      ],
-      "links": {}
-    },
-    {
-      "id": "project_hrd",
-      "name": "IT HRD",
-      "nameEn": "IT Human Resource Development",
-      "period": "2011.01 ~ 2013.12",
-      "status": "Complete",
-      "role": "IT Instructor",
-      "description": [
-        "LG CNS, LG전자의 기술교육 과정 개발 및 강의"
-      ],
-      "tasks": [
-        "IT 구현역량 교육과정(클린코드, Refactoring, DesignPattern) 개발 및 강의",
-        "서울대학교 소프트웨어 응용 과정 개발 및 강의",
-        "임원기술세미나/Technology 테마특강 세미나 운영",
-        "HTML5, Jquery Mobile, Sencha Touch, NodeJs 과정 개발 및 강의",
-        "LG CNS 신입사원 기술교육 과정 개발 및 강의",
-        "LG전자 신입사원 기술교육 과정 개발 및 강의",
-        "LG전자, LG CNS IT 인증시험 문항출제 및 검토",
-        "LG전자 신입사원 기술교육 과정 개발 및 강의"
-      ],
-      "techStack": "Java/J2EE, DevOn F/W, HTML5(JavaScript/CSS), Refactoring, Desgin Pattern, NodeJs, TDD",
-      "images": [
-        {
-          "src": "images/projects/hrd01.jpg",
-          "title": "Web UI"
-        },
-        {
-          "src": "images/projects/hrd02.jpg",
-          "title": "클린코드"
-        },
-        {
-          "src": "images/projects/hrd04.jpg",
-          "title": "디자인패턴"
-        },
-        {
-          "src": "images/projects/hrd05.jpg",
-          "title": "TDD"
-        },
-        {
-          "src": "images/projects/hrd06.jpg",
-          "title": "NodeJs"
-        },
-        {
-          "src": "images/projects/hrd07.jpg",
-          "title": "서울대산학협력과정 소프트웨어공학"
-        },
-        {
-          "src": "images/projects/hrd08.jpg",
-          "title": "세미나 운영"
-        }
-      ],
-      "links": {}
-    },
-    {
-      "id": "project_softwarearchitect",
-      "name": "소프트웨어 아키텍처 수립 및 구축",
-      "nameEn": "Software Architecture Development",
-      "period": "2007.06 ~ 2010.12",
-      "status": "Complete",
-      "role": "Application Architect",
-      "description": [
-        "LG계열사, 오픈마켓 SI프로젝트(J2EE, DevOn F/W)의 소프트웨어 아키텍처 수립 및 구축"
-      ],
-      "tasks": [
-        "LG화학 LG 화학 온실가스 배출원 관리 시스템, 소프트웨어 아키텍처 수립 및 구축",
-        "LG디스플레이 영업 서비스 포탈, 소프트웨어 아키텍처 수립 및 구축, 웹보안 점검",
-        "LG전자 lge.com v2.0, 소프트웨어 아키텍처 수립 및 구축",
-        "DevOn Analysis Designer 솔루션(RCP), 소프트웨어 아키텍처 수립 및 구축",
-        "LIG넥스원 방산원가 시스템, 소프트웨어 아키텍처 수립 및 구축",
-        "Lean개발방법론, 소프트웨어 아키텍처 수립 및 구축",
-        "LG CNS 개발공정지원시스템, 소프트웨어 아키텍처 수립 및 구축",
-        "LG CNS 모바일웹 UI프레임워크, 소프트웨어 아키텍처 수립 및 구축",
-        "LG CNS LWebGrid 솔루션(JavaScript UI Component), 아키텍처 수립 및 구축",
-        "LG CNS PBF_Web v2.0 솔루션(Middleware F/W), 아키텍처 수립 및 구축"
-      ],
-      "techStack": "Java/J2EE, DevOn F/W, RCP, JavaScript, CI, Test자동화, TDD, 웹보안",
-      "images": [],
-      "links": {}
-    },
-    {
-      "id": "project_bpm",
-      "name": "BPM 유지보수",
-      "nameEn": "BPM System Maintenance",
-      "period": "2006.01 ~ 2007.05",
-      "status": "Complete",
-      "role": "System Maintenance",
-      "description": [
-        "LG전자 BPM(핸디 소프트 BPM)의 유지보수 및 연계 모듈 개발"
-      ],
-      "tasks": [
-        "LG전자 BPM 성능개선(DB튜닝 및 솔루션 성능개선)",
-        "LG전자 Global ERP 시스템과 연계(Interface) 모듈 개발"
-      ],
-      "techStack": "Java/J2EE, 핸디소프트 BPM, DB성능 모니터링, Oracle DB 쿼리 튜닝",
-      "images": [],
-      "links": {}
-    },
-    {
-      "id": "project_j2ee",
-      "name": "보급 판매 통합 시스템",
-      "nameEn": "Supply and Sales Integration System",
-      "period": "2004.01 ~ 2005.12",
-      "status": "Complete",
-      "role": "System Developer, System Maintenance",
-      "description": [
-        "육군 복지단의 보급 판매 통합 시스템의 분석/설계 및 개발",
-        "매장의 판매 데이터를 기반으로 제품의 주문, 재고 및 물류를 관리해주는 웹 기반의 서비스"
-      ],
-      "tasks": [
-        "청구 모듈의 분석/설계, 자동 청구모듈 J2EE(EJB) 개발",
-        "웹인증 보안모듈 ActiveX 개발",
-        "청구 모듈의 대용량 데이터 베이스 성능 튜닝"
-      ],
-      "techStack": "Java/J2EE, EJB, Visual C++, MFC, ActiveX, DB성능 모니터링, Oracle DB 쿼리 튜닝",
-      "images": [],
-      "links": {}
-    },
-    {
-      "id": "project_mfc",
-      "name": "WCDMA(3G) NMS",
-      "nameEn": "WCDMA Network Management System",
-      "period": "2002.12 ~ 2003.11",
-      "status": "Complete",
-      "role": "Client Developer",
-      "description": [
-        "SK텔레콤 WCDMA 관제 시스템 개발(관제 월보드용)"
-      ],
-      "tasks": [
-        "WCDMA NMS Client 개발",
-        "WCDMA ActiveX 개발(관제 Map Module using Flash component)",
-        "WCDMA Web NMS 개발(JSP & Servlet)"
-      ],
-      "techStack": "Visaul C++, MFC, ActiveX, Servlet/JSP, Flash",
-      "images": [],
-      "links": {}
-    }
-  ]
+    ]
 }
