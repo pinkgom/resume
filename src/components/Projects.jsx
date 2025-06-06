@@ -219,15 +219,19 @@ const Projects = ({ projects, selectedCategory, setSelectedCategory }) => {
               onClick={() => setSelectedProject(project)}
             >
                 {/* Project Image */}
-                {project.images && project.images[0] && (
-                  <div className="aspect-video bg-gray-100 dark:bg-gray-700 overflow-hidden">
-                    <img
-                      src={project.images[0].src}
-                      alt={project.images[0].title}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                )}
+                {project.images && project.images.length > 0 && (() => {
+                  // featured: true인 이미지를 찾거나, 없으면 첫 번째 이미지 사용
+                  const featuredImage = project.images.find(img => img.featured) || project.images[0];
+                  return (
+                    <div className="aspect-video bg-gray-100 dark:bg-gray-700 overflow-hidden">
+                      <img
+                        src={featuredImage.src}
+                        alt={featuredImage.title}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  );
+                })()}
 
                 <div className="p-6">
                   {/* Period & Status */}

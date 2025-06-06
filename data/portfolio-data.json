@@ -79,7 +79,8 @@
                 },
                 {
                     "src": "images/projects/caos12.jpg",
-                    "title": "카오스 포스터"
+                    "title": "카오스 포스터",
+                    "featured": true
                 },
                 {
                     "src": "images/projects/caos13.jpg",
