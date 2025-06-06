@@ -104,3 +104,6 @@ typings/
 
 # Build output
 dist/
+
+# Keep index.html for Vite development
+# index.html
