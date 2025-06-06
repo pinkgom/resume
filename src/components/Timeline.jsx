@@ -1,14 +1,16 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef, useEffect, useMemo } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { FaUser, FaCode, FaCog, FaRocket, FaLaptopCode } from 'react-icons/fa'
 
 const Timeline = ({ projects }) => {
   const [selectedProject, setSelectedProject] = useState(null)
   const timelineRef = useRef(null)
-  const isInView = useInView(timelineRef, { once: false, amount: 0.2 })
+  const isInView = useInView(timelineRef, { once: true, amount: 0.1 })
 
-  // Debug: projects 데이터 확인
-  console.log('Timeline projects:', projects)
+  // Debug: projects 데이터 확인 (한 번만 실행)
+  useEffect(() => {
+    console.log('Timeline projects:', projects?.length || 0, 'projects loaded')
+  }, [projects])
 
   // projects가 없거나 빈 배열인 경우 처리
   if (!projects || projects.length === 0) {
@@ -28,17 +30,21 @@ const Timeline = ({ projects }) => {
     )
   }
 
-  // 프로젝트를 최신순으로 정렬 (기간 기준)
-  const sortedProjects = [...projects]
-    .filter(project => project.period) // period가 있는 프로젝트만
-    .sort((a, b) => {
-      // period에서 연도 추출하여 내림차순 정렬
-      const getYear = (period) => {
-        const match = period.match(/(\d{4})/)
-        return match ? parseInt(match[1]) : 0
-      }
-      return getYear(b.period) - getYear(a.period)
-    })
+  // 프로젝트를 최신순으로 정렬 - 메모이제이션
+  const sortedProjects = useMemo(() => {
+    if (!projects || projects.length === 0) return []
+    
+    return [...projects]
+      .filter(project => project.period) // period가 있는 프로젝트만
+      .sort((a, b) => {
+        // period에서 연도 추출하여 내림차순 정렬
+        const getYear = (period) => {
+          const match = period.match(/(\d{4})/)
+          return match ? parseInt(match[1]) : 0
+        }
+        return getYear(b.period) - getYear(a.period)
+      })
+  }, [projects])
 
   const getRoleIcon = (role) => {
     if (role.includes('Manager')) return FaUser
@@ -67,13 +73,12 @@ const Timeline = ({ projects }) => {
   }
 
   const itemVariants = {
-    hidden: { opacity: 0, x: -50 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
-      x: 0,
+      y: 0,
       transition: {
-        duration: 0.6,
-        ease: "easeOut"
+        duration: 0.4
       }
     }
   }
@@ -113,9 +118,7 @@ const Timeline = ({ projects }) => {
                 <motion.div
                   key={project.id}
                   variants={itemVariants}
-                  className={`relative flex items-center mb-12 ${
-                    isEven ? 'md:flex-row' : 'md:flex-row-reverse'
-                  }`}
+                  className="relative mb-12"
                 >
                   {/* Timeline Node */}
                   <motion.div
@@ -131,10 +134,10 @@ const Timeline = ({ projects }) => {
                   {/* Content Card */}
                   <motion.div
                     whileHover={{ scale: 1.02 }}
-                    className={`w-full md:w-5/12 ${
+                    className={`ml-24 md:ml-0 ${
                       isEven 
-                        ? 'ml-24 md:ml-0 md:mr-auto md:pr-8' 
-                        : 'ml-24 md:ml-auto md:pl-8'
+                        ? 'md:w-5/12 md:pr-8' 
+                        : 'md:w-5/12 md:ml-auto md:pl-8'
                     }`}
                   >
                     <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100 dark:border-gray-700">
