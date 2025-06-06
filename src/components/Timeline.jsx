@@ -7,6 +7,39 @@ const Timeline = ({ projects }) => {
   const timelineRef = useRef(null)
   const isInView = useInView(timelineRef, { once: false, amount: 0.2 })
 
+  // Debug: projects 데이터 확인
+  console.log('Timeline projects:', projects)
+
+  // projects가 없거나 빈 배열인 경우 처리
+  if (!projects || projects.length === 0) {
+    return (
+      <section id="timeline" className="py-20 bg-white dark:bg-gray-900">
+        <div className="container mx-auto px-4">
+          <div className="text-center">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              <span className="gradient-text">Project History</span>
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300">
+              프로젝트 데이터를 불러오는 중...
+            </p>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  // 프로젝트를 최신순으로 정렬 (기간 기준)
+  const sortedProjects = [...projects]
+    .filter(project => project.period) // period가 있는 프로젝트만
+    .sort((a, b) => {
+      // period에서 연도 추출하여 내림차순 정렬
+      const getYear = (period) => {
+        const match = period.match(/(\d{4})/)
+        return match ? parseInt(match[1]) : 0
+      }
+      return getYear(b.period) - getYear(a.period)
+    })
+
   const getRoleIcon = (role) => {
     if (role.includes('Manager')) return FaUser
     if (role.includes('Developer')) return FaCode
@@ -72,7 +105,7 @@ const Timeline = ({ projects }) => {
             {/* Timeline Line */}
             <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 transform md:-translate-x-1/2" />
 
-            {projects.map((project, index) => {
+            {sortedProjects.map((project, index) => {
               const IconComponent = getRoleIcon(project.role)
               const isEven = index % 2 === 0
 
@@ -136,6 +169,13 @@ const Timeline = ({ projects }) => {
                           {Array.isArray(project.description) 
                             ? project.description[0] 
                             : project.description}
+                        </p>
+                      )}
+                      
+                      {/* 프로젝트에 description이 없을 때 기본 메시지 */}
+                      {!project.description && (
+                        <p className="text-gray-500 dark:text-gray-400 text-sm italic">
+                          프로젝트 진행중...
                         </p>
                       )}
 
