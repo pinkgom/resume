@@ -40,12 +40,28 @@ const Navigation = ({ activeSection, setActiveSection }) => {
 
   const handleNavClick = (e, href, id) => {
     e.preventDefault()
-    const element = document.querySelector(href)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-      setActiveSection(id)
-      setIsMobileMenuOpen(false)
-    }
+    
+    // 모바일 메뉴 먼저 닫기
+    setIsMobileMenuOpen(false)
+    
+    // 짧은 딜레이 후 스크롤 (모바일에서 메뉴 애니메이션 완료 후)
+    setTimeout(() => {
+      const element = document.querySelector(href)
+      if (element) {
+        // 네비게이션 바 높이를 고려한 오프셋
+        const navHeight = 64 // 16 * 4 (h-16)
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset - navHeight
+        
+        window.scrollTo({
+          top: elementPosition,
+          behavior: 'smooth'
+        })
+        
+        setActiveSection(id)
+      } else {
+        console.warn(`Element with selector "${href}" not found`)
+      }
+    }, isMobileMenuOpen ? 300 : 0) // 모바일 메뉴가 열려있으면 300ms 딜레이
   }
 
   return (
