@@ -290,15 +290,30 @@ const Projects = ({ projects, selectedCategory, setSelectedCategory }) => {
                   <div className="flex justify-between items-center">
                     <div className="flex gap-2">
                       {project.links?.blog && (
-                        <a
-                          href={project.links.blog}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={(e) => e.stopPropagation()}
-                          className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"
-                        >
-                          <FaExternalLinkAlt size={14} />
-                        </a>
+                        Array.isArray(project.links.blog) ? (
+                          project.links.blog.map((blogUrl, idx) => (
+                            <a
+                              key={idx}
+                              href={blogUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={(e) => e.stopPropagation()}
+                              className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"
+                            >
+                              <FaExternalLinkAlt size={14} />
+                            </a>
+                          ))
+                        ) : (
+                          <a
+                            href={project.links.blog}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"
+                          >
+                            <FaExternalLinkAlt size={14} />
+                          </a>
+                        )
                       )}
                       {project.links?.website && (
                         <a

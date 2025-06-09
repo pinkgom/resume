@@ -236,14 +236,28 @@ const Timeline = ({ projects }) => {
                             {(project.links?.blog || project.links?.website) && (
                               <div className="flex gap-2">
                                 {project.links.blog && (
-                                  <a
-                                    href={project.links.blog}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center px-3 py-1 bg-blue-600 text-white rounded text-xs hover:bg-blue-700 transition-colors"
-                                  >
-                                    블로그
-                                  </a>
+                                  Array.isArray(project.links.blog) ? (
+                                    project.links.blog.map((blogUrl, idx) => (
+                                      <a
+                                        key={idx}
+                                        href={blogUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center px-3 py-1 bg-blue-600 text-white rounded text-xs hover:bg-blue-700 transition-colors"
+                                      >
+                                        블로그 {project.links.blog.length > 1 ? idx + 1 : ''}
+                                      </a>
+                                    ))
+                                  ) : (
+                                    <a
+                                      href={project.links.blog}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="inline-flex items-center px-3 py-1 bg-blue-600 text-white rounded text-xs hover:bg-blue-700 transition-colors"
+                                    >
+                                      블로그
+                                    </a>
+                                  )
                                 )}
                                 {project.links.website && (
                                   <a
