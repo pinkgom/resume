@@ -181,8 +181,7 @@
                 }
             ],
             "links": {
-                "blog": "https://brunch.co.kr/@joypinkgom/163",
-                "website": "https://withmbc.com"
+                "blog": "https://brunch.co.kr/@joypinkgom/163"
             }
         },
         {
@@ -254,7 +253,6 @@
             ],
             "links": {
                 "blog": ["https://brunch.co.kr/@joypinkgom/132", "https://brunch.co.kr/@joypinkgom/148", "https://brunch.co.kr/@joypinkgom/149"],
-                "website": "https://coddas.mbcrnd.com/",
                 "android": "https://play.google.com/store/apps/details?id=kr.co.mbc.coddas"
             }
         },
