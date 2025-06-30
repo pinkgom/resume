@@ -32,7 +32,20 @@
             "description": ["AI 기반 실시간 음악 인식 서비스", "AI 모델을 활용한 음악 분류, 오디오 임베딩", "선곡 알고리즘 및 선곡 AI 모델"],
             "tasks": ["프로젝트 관리", "기능 설계 및 서비스 아키텍처 수립"],
             "techStack": "wav2vec, FAISS, YAMNET",
-            "images": [],
+            "images": [
+                {
+                    "src": "images/projects/museek01.jpg",
+                    "title": "뮤지크 모니터링 서비스"
+                },
+                {
+                    "src": "images/projects/museek02.jpg",
+                    "title": "뮤지크를 통한 미니 서비스 선곡"
+                },
+                {
+                    "src": "images/projects/museek03.jpg",
+                    "title": "뮤지크 실시간 선곡"
+                }
+            ],
             "links": {
                 "blog": "https://brunch.co.kr/@joypinkgom/212"
             }
