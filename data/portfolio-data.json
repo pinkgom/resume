@@ -10,16 +10,70 @@
     },
     "projects": [
         {
+            "id": "project_newspeak",
+            "name": "뉴스픽",
+            "nameEn": "NEWSPEAK(News Speak)",
+            "period": "2025.09 - 2026.01",
+            "status": "In progress",
+            "role": "Project Manager",
+            "description": ["AI 음성을 활용한 라디오 뉴스 제작 시스템"],
+            "tasks": ["프로젝트 관리", "기능 설계 및 서비스 아키텍처 수립"],
+            "techStack": "",
+            "images": [],
+            "links": {}
+        },
+        {
             "id": "project_muse",
-            "name": "MUSE(Music Utility for Suggestion & Evolution) 프로젝트",
+            "name": "뮤지크",
             "nameEn": "MUSEEK(Music Utility for Suggestion & Evolution)",
-            "period": "2025.07 - 2025.12",
+            "period": "2025.07 - 2026.01",
             "status": "In progress",
             "role": "Project Manager",
             "description": ["AI 기반 음악 추천 및 생성 서비스"],
             "tasks": ["프로젝트 관리", "기능 설계 및 서비스 아키텍처 수립"],
             "techStack": "FAISS, YAMNET",
-            "images": [],
+            "images": [
+                {
+                    "src": "images/projects/muse_music_list.png",
+                    "title": "음악 목록"
+                },
+                {
+                    "src": "images/projects/muse_music_detail.png",
+                    "title": "음악 상세"
+                },
+                {
+                    "src": "images/projects/muse_music_player.png",
+                    "title": "뮤직 플레이어"
+                },
+                {
+                    "src": "images/projects/muse_music_grid.png",
+                    "title": "음악 그리드"
+                },
+                {
+                    "src": "images/projects/muse_music_compare.png",
+                    "title": "음악 비교"
+                },
+                {
+                    "src": "images/projects/muse_playlist_list.png",
+                    "title": "플레이리스트 목록"
+                },
+                {
+                    "src": "images/projects/muse_playlist_detail.png",
+                    "title": "플레이리스트 상세"
+                },
+                {
+                    "src": "images/projects/muse_playlist_creation.png",
+                    "title": "플레이리스트 생성"
+                },
+                {
+                    "src": "images/projects/muse_playlist_creation_manual.png",
+                    "title": "플레이리스트 수동 생성"
+                },
+                {
+                    "src": "images/projects/muse_playlist_detail_add.png",
+                    "title": "플레이리스트 곡 추가"
+                }
+            ],
             "links": {}
         },
         {
