@@ -11,7 +11,7 @@
     "projects": [
         {
             "id": "project_newspeak",
-            "name": "뉴스픽",
+            "name": "AI 라디오 뉴스 제작 시스템(NEWSPEAK, 뉴스픽)",
             "nameEn": "NEWSPEAK(News Speak)",
             "period": "2025.09 - 2026.01",
             "status": "In progress",
@@ -24,8 +24,8 @@
         },
         {
             "id": "project_muse",
-            "name": "뮤지크",
-            "nameEn": "MUSEEK(Music Utility for Suggestion & Evolution)",
+            "name": "AI 음악 추천 및 생성 시스템(MUSE, 뮤즈)",
+            "nameEn": "MUSE(Music Utility for Suggestion & Evolution)",
             "period": "2025.07 - 2026.01",
             "status": "In progress",
             "role": "Project Manager",
@@ -78,7 +78,7 @@
         },
         {
             "id": "project_museek",
-            "name": "MUSEEK(Music Seek) 프로젝트",
+            "name": "AI 음악 인식 서비스(MUSEEK, 뮤지크)",
             "nameEn": "MUSEEK(Music Seek)",
             "period": "2025.01 - 2025.06",
             "status": "Complete",
@@ -106,7 +106,7 @@
         },
         {
             "id": "project_caos",
-            "name": "CCTV 자동관제 시스템",
+            "name": "AI CCTV 자동관제 시스템",
             "nameEn": "CAOS(CCTV Automated Observation System)",
             "period": "2024.01 ~ 2024.12",
             "status": "Complete",
