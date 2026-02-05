@@ -27,7 +27,7 @@
             "name": "AI 음악 추천 및 생성 시스템(MUSE, 뮤즈)",
             "nameEn": "MUSE(Music Utility for Suggestion & Evolution)",
             "period": "2025.07 - 2026.01",
-            "status": "In progress",
+            "status": "Complete",
             "role": "Project Manager",
             "description": ["AI 기반 음악 추천 및 생성 서비스"],
             "tasks": ["프로젝트 관리", "기능 설계 및 서비스 아키텍처 수립"],
@@ -72,6 +72,14 @@
                 {
                     "src": "images/projects/muse_playlist_detail_add.png",
                     "title": "플레이리스트 곡 추가"
+                },
+                {
+                    "src": "images/projects/muse_bgm.png",
+                    "title": "배경음 생성"
+                },
+                {
+                    "src": "images/projects/muse_sfx.png",
+                    "title": "효과음 생성"
                 }
             ],
             "links": {}
