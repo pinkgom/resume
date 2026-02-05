@@ -10,16 +10,29 @@
     },
     "projects": [
         {
-            "id": "project_newspeak",
-            "name": "AI 라디오 뉴스 제작 시스템(NEWSPEAK, 뉴스픽)",
-            "nameEn": "NEWSPEAK(News Speak)",
-            "period": "2025.09 - 2026.01",
+            "id": "project_mspeak",
+            "name": "AI 라디오 뉴스 제작 시스템(MSPEAK, 엠스픽)",
+            "nameEn": "MSPEAK(M Speak)",
+            "period": "2025.09 - 2026.02",
             "status": "In progress",
             "role": "Project Manager",
             "description": ["AI 음성을 활용한 라디오 뉴스 제작 시스템"],
             "tasks": ["프로젝트 관리", "기능 설계 및 서비스 아키텍처 수립"],
-            "techStack": "",
-            "images": [],
+            "techStack": "FFMPEG, TTS, LLM",
+            "images": [
+                {
+                    "src": "images/projects/mspeak_validation.png",
+                    "title": "MSPEAK 교열/검수"
+                },
+                {
+                    "src": "images/projects/mspeak_script.png",
+                    "title": "MSPEAK TTS스크립트 생성"
+                },
+                {
+                    "src": "images/projects/mspeak_tts.png",
+                    "title": "MSPEAK TTS 변환"
+                }
+            ],
             "links": {}
         },
         {
@@ -31,7 +44,7 @@
             "role": "Project Manager",
             "description": ["AI 기반 음악 추천 및 생성 서비스"],
             "tasks": ["프로젝트 관리", "기능 설계 및 서비스 아키텍처 수립"],
-            "techStack": "FAISS, CLAP",
+            "techStack": "FAISS, CLAP, LLM",
             "images": [
                 {
                     "src": "images/projects/muse_music_list.png",
