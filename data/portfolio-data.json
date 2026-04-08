@@ -11,7 +11,7 @@
     "projects": [
         {
             "id": "project_ieum",
-            "name": "디지털뉴스룸 컨텐츠 관리 시스템(IEUM, 이음)",
+            "name": "디지털뉴스 컨텐츠 관리 시스템(IEUM, 이음)",
             "nameEn": "IEUM(Integrated Engine for Unified Media)",
             "period": "2026.03 - 진행중",
             "status": "In progress",
