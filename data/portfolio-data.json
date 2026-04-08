@@ -2,7 +2,7 @@
     "personalInfo": {
         "name": "안경찬",
         "nameEn": "Ahn Gyeong-chan",
-        "title": "Project Manager / Software Architect / Fullstack Developer / IT Instructor",
+        "title": "AI Engineer / Project Manager / Software Architect / Fullstack Developer / IT Instructor",
         "location": "마포구 상암동, 서울",
         "email": "joypinkgom@gmail.com",
         "blog": "https://brunch.co.kr/@joypinkgom",
@@ -10,11 +10,24 @@
     },
     "projects": [
         {
+            "id": "project_ieum",
+            "name": "디지털뉴스룸 컨텐츠 관리 시스템(IEUM, 이음)",
+            "nameEn": "IEUM(Integrated Engine for Unified Media)",
+            "period": "2026.03 - 진행중",
+            "status": "In progress",
+            "role": "Project Manager",
+            "description": ["방송 콘텐츠를 위한 CMS 솔루션 개발 프로젝트"],
+            "tasks": ["프로젝트 관리", "기능 설계 및 서비스 아키텍처 수립"],
+            "techStack": "VibeCoding, NextJs, NodeJs, PostgreSQL, Redis, LLM",
+            "images": [],
+            "links": {}
+        },
+        {
             "id": "project_mspeak",
             "name": "AI 라디오 뉴스 제작 시스템(MSPEAK, 엠스픽)",
             "nameEn": "MSPEAK(M Speak)",
             "period": "2025.09 - 2026.02",
-            "status": "In progress",
+            "status": "Complete",
             "role": "Project Manager",
             "description": ["AI 음성을 활용한 라디오 뉴스 제작 시스템"],
             "tasks": ["프로젝트 관리", "기능 설계 및 서비스 아키텍처 수립"],
