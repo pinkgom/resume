@@ -11,7 +11,7 @@
     "projects": [
         {
             "id": "project_magic",
-            "name": "기자·PD용 AI 업무 도구 서비스(MAGIC, 매직)",
+            "name": "보도본부 AI 에이전트(MAGIC, 매직)",
             "nameEn": "MAGIC(M-AGI-C)",
             "period": "2026.07 - 진행중",
             "status": "In progress",
