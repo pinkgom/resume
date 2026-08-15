@@ -10,6 +10,34 @@
     },
     "projects": [
         {
+            "id": "project_mschedule",
+            "name": "근무표 관리 시스템(MSchedule, 엠스케줄)",
+            "nameEn": "MSchedule(M Schedule)",
+            "period": "2026.08 - 진행중",
+            "status": "In progress",
+            "role": "Software Architect, Fullstack Developer",
+            "description": [
+                "MBC 근무표(월간·데일리) 작성·결재·자동배당 사내 웹 서비스",
+                "월간 근무 배정이 데일리 뉴스 배정을 파생으로 채우는 도메인 모델 — 근무유형·시간·제약을 전부 데이터로 두어 전사 확대 대응",
+                "CP-SAT 솔버 자동배당 + 독립 검증기 + 실패 사유·완화 제안 리포트(왜 이 사람인지, 왜 실패했는지 설명 가능한 배정)"
+            ],
+            "tasks": [
+                "프로젝트 관리, 요구사항 해독(한글 근무표 문서 3종 역공학) 및 서비스 아키텍처 수립",
+                "현업(아나운서국) 확인요청·회신 사이클 운영으로 업무 규칙 15건 확정(근무 시간 정의, 배분 수치, 개인별 예외)",
+                "월간→데일리 파생(covers) 슬롯 파이프라인 및 날짜 종류 판정(공휴일·사내휴일·놀금) 설계",
+                "UI 컴포넌트 체계 구축 — 글로벌 리서치 기반 선정(Base UI, react-day-picker) 및 날짜·멀티셀렉트 공용 컴포넌트 개발",
+                "디자인 시스템 규율 수립(단일 액센트 + 데이터 색 3계층, WCAG·색각이상 검증 팔레트)",
+                "근무표 격자 편집(월간·데일리)·마스터 관리·PDF 인쇄 화면 개발",
+                "법정공휴일 자동 동기화 개발(공공데이터 특일 API 연동, 수기 우선권 동기화)",
+                "OR-Tools CP-SAT 자동배당 솔버·독립 검증기·실패 리포트 개발",
+                "멀티 에이전트 병렬 개발 워크플로 운영(세션 간 분담·상호 코드리뷰·품질 게이트)",
+                "재사용 공통 관리 패키지(mbckit) 통합(회원·RBAC·메뉴·감사로그·결재선 권한)"
+            ],
+            "techStack": "VibeCoding, FastAPI, SQLAlchemy, Alembic, OR-Tools(CP-SAT), NextJs, Tailwind, Base UI, MySQL, Docker, LDAP",
+            "images": [],
+            "links": {}
+        },
+        {
             "id": "project_magic",
             "name": "보도본부 AI 에이전트(MAGIC, 매직)",
             "nameEn": "MAGIC(M-AGI-C)",
