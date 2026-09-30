@@ -115,7 +115,7 @@ Google Fonts에서 불러온다. 기존 Inter, Noto Sans KR은 제거한다.
 
 ```
 ┌──────────────────────────────────────────────────────────┐
-│ (프로필) 안경찬  Ahn Gyeong-chan      기록  기술  연락  ◐ │
+│ (프로필) 안경찬  Ahn Kyeong-chan      기록  기술  연락  ◐ │
 │ AI Engineer, Project Manager, Software Architect, …      │
 │ 소개 두세 문장                                            │
 │ 이메일   브런치                                           │

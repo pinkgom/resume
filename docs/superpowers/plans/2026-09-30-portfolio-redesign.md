@@ -2601,7 +2601,7 @@ MIT License
 `## Project Overview` 아래 두 줄을 아래로 바꾼다.
 
 ```markdown
-This is the public profile site for Ahn Gyeong-chan, built with **React 18**, **Vite**, and **Tailwind CSS**.
+This is the public profile site for Ahn Kyeong-chan, built with **React 18**, **Vite**, and **Tailwind CSS**.
 It shows a 24-year career as an editing-style timeline (five role tracks) above a single expandable ledger of all projects. Light and dark themes are supported.
 ```
 
