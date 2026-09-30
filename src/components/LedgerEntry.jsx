@@ -58,8 +58,8 @@ const LedgerEntry = ({ project, open, onToggle, onPickTech, today }) => {
           {description.length > 0 && (
             <Detail title="개요">
               <ul className="list-disc space-y-1 pl-5">
-                {description.map((line) => (
-                  <li key={line}>{line}</li>
+                {description.map((line, index) => (
+                  <li key={index}>{line}</li>
                 ))}
               </ul>
             </Detail>
@@ -67,8 +67,8 @@ const LedgerEntry = ({ project, open, onToggle, onPickTech, today }) => {
           {tasks.length > 0 && (
             <Detail title="주요 업무">
               <ul className="list-disc space-y-1 pl-5">
-                {tasks.map((line) => (
-                  <li key={line}>{line}</li>
+                {tasks.map((line, index) => (
+                  <li key={index}>{line}</li>
                 ))}
               </ul>
             </Detail>
@@ -90,7 +90,7 @@ const LedgerEntry = ({ project, open, onToggle, onPickTech, today }) => {
             <Detail title="화면">
               <ul className="flex flex-wrap gap-3">
                 {images.map((image, index) => (
-                  <li key={image.src}>
+                  <li key={`${index}-${image.src}`}>
                     <button type="button" onClick={() => setViewing(index)} aria-label={`${image.title} 크게 보기`}>
                       <img
                         src={image.src}
@@ -108,8 +108,8 @@ const LedgerEntry = ({ project, open, onToggle, onPickTech, today }) => {
           {links.length > 0 && (
             <Detail title="링크">
               <ul className="flex flex-wrap gap-x-5 gap-y-1">
-                {links.map(({ label, url }) => (
-                  <li key={url}>
+                {links.map(({ label, url }, index) => (
+                  <li key={index}>
                     <a href={url} target="_blank" rel="noopener noreferrer" className={LINK}>
                       {label}
                     </a>

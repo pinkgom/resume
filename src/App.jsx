@@ -64,7 +64,10 @@ function App() {
   }, [openProject])
 
   useEffect(() => {
-    if (scrollTarget) document.getElementById(scrollTarget.id)?.scrollIntoView({ block: 'start' })
+    if (!scrollTarget) return
+    document.getElementById(scrollTarget.id)?.scrollIntoView({ block: 'start' })
+    // 걸러 본 결과로 화면만 옮기면 키보드 포커스가 뒤에 남으므로 제목으로 함께 옮긴다
+    if (scrollTarget.id === 'ledger') document.getElementById('ledger-title')?.focus({ preventScroll: true })
   }, [scrollTarget])
 
   const toggleEntry = (id) => {

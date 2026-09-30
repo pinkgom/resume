@@ -92,6 +92,24 @@ describe('App', () => {
     expect(entryButton(hidden.id).getAttribute('aria-expanded')).toBe('true')
   })
 
+  it('걸러 보기를 고르면 기록 제목으로 이동하고 키보드 포커스도 옮긴다', () => {
+    render(<App />)
+    fireEvent.click(screen.getByRole('button', { name: '개발' }))
+    const heading = screen.getByRole('heading', { name: /^기록 \d+건/ })
+    expect(document.activeElement).toBe(heading)
+    const scrolled = Element.prototype.scrollIntoView.mock.contexts.at(-1)
+    expect(scrolled.id).toBe('ledger')
+  })
+
+  it('실제 기록을 전부 펼쳐도 React 경고나 오류가 없다', () => {
+    const errors = vi.spyOn(console, 'error').mockImplementation(() => {})
+    render(<App />)
+    for (const project of projects) fireEvent.click(entryButton(project.id))
+    expect(expandedCount()).toBe(projects.length)
+    expect(errors.mock.calls.map((call) => String(call[0]))).toEqual([])
+    errors.mockRestore()
+  })
+
   it('어두운 화면 버튼은 테마를 바꾸고 선택을 저장한다', () => {
     render(<App />)
     fireEvent.click(screen.getByRole('button', { name: '어두운 화면' }))
