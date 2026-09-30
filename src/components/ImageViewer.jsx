@@ -30,7 +30,11 @@ const ImageViewer = ({ images, index, onChange, onClose }) => {
     <dialog
       ref={dialogRef}
       aria-label={image.title}
-      onCancel={onClose}
+      onCancel={(event) => {
+        // Esc: 브라우저의 기본 닫기 대신 close()를 거쳐 닫아야 포커스가 돌아온다
+        event.preventDefault()
+        close()
+      }}
       onKeyDown={onKeyDown}
       onClick={(event) => {
         // 바깥(어두운 영역)을 누르면 닫는다
