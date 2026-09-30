@@ -1,164 +1,114 @@
 # 안경찬 포트폴리오
 
-> React 기반의 모던하고 인터랙티브한 포트폴리오 웹사이트
+> 2002년부터의 프로젝트를 역할별 타임라인과 기록 목록으로 보여 주는 공개 프로필 페이지
 
-## 🚀 주요 기능
+공개 주소: https://pinkgom.github.io/resume
 
-- **모던 UI/UX**: React, Tailwind CSS를 활용한 현대적 디자인
-- **다크모드 지원**: 라이트/다크 테마 자동 전환
-- **반응형 디자인**: 모든 디바이스에서 최적화된 사용자 경험
-- **인터랙티브 타임라인**: 프로젝트 히스토리를 시각적으로 표현
-- **애니메이션 효과**: Framer Motion을 활용한 부드러운 전환 효과
-- **프로젝트 필터링**: 카테고리별 프로젝트 분류 및 검색
-- **스킬 시각화**: 기술 스택을 직관적으로 표현
+## 구성
 
-## 🛠 기술 스택
+- **머리**: 이름, 직함, 소개, 연락 링크
+- **타임라인**: 역할별 5개 트랙(PM, 아키텍트, 개발, 운영, 강의)에 프로젝트를 클립으로 올린 도표. 빨간 세로선이 오늘이고, 빗금은 예정된 기간이다. 클립을 누르면 해당 기록으로 이동한다.
+- **기록**: 모든 프로젝트의 단일 목록. 행을 누르면 그 자리에서 펼쳐진다. 기록마다 주소가 있다(예: `#project_magic`).
+- **기술**: 프로젝트 데이터에서 자동 집계한 색인. 기술이나 트랙 이름을 누르면 기록을 걸러 본다.
+- **연락**: 이메일, 브런치, 위치
 
-### Frontend
-- **React 18** - 컴포넌트 기반 UI 라이브러리
-- **Vite** - 빠른 개발 서버 및 빌드 도구
-- **Tailwind CSS** - 유틸리티 우선 CSS 프레임워크
-- **Framer Motion** - 애니메이션 라이브러리
-- **React Icons** - 아이콘 라이브러리
+밝은 화면과 어두운 화면을 지원하고, 처음에는 시스템 설정을 따른다.
 
-### Tools & Build
-- **PostCSS** - CSS 후처리기
-- **Autoprefixer** - 브라우저 호환성
-- **gh-pages** - GitHub Pages 자동 배포
+## 기술 스택
 
-## 📁 프로젝트 구조
+- React 18, Vite 5, Tailwind CSS 3
+- Vitest, Testing Library (테스트)
+- GitHub Pages (배포)
+
+애니메이션 라이브러리는 쓰지 않는다. 움직임은 페이지를 열 때 플레이헤드가 한 번 지나가는 것뿐이고 CSS로 구현했다.
+
+## 프로젝트 구조
 
 ```
 resume/
-├── CLAUDE.md             # 프로젝트 가이드
-├── README.md             # 프로젝트 설명
 ├── data/
-│   └── portfolio-data.json  # 포트폴리오 데이터
-├── public/
-│   └── images/           # 프로젝트 이미지
+│   └── portfolio-data.json     # 모든 콘텐츠
+├── public/images/              # 프로필, 프로젝트 화면
 ├── src/
-│   ├── components/       # React 컴포넌트
-│   │   ├── Navigation.jsx
-│   │   ├── Hero.jsx
-│   │   ├── Timeline.jsx
-│   │   ├── Projects.jsx
-│   │   ├── Skills.jsx
-│   │   ├── Contact.jsx
-│   │   ├── ThemeToggle.jsx
-│   │   └── ScrollToTop.jsx
-│   ├── App.jsx
+│   ├── utils/
+│   │   └── career.js           # 기간 해석, 트랙 분류, 타임라인 구성, 기술 색인, 걸러 보기
+│   ├── components/
+│   │   ├── Header.jsx          # 소개 영역
+│   │   ├── CareerTimeline.jsx  # 타임라인
+│   │   ├── Ledger.jsx          # 기록 목록
+│   │   ├── LedgerEntry.jsx     # 기록 한 행과 펼친 내용
+│   │   ├── ImageViewer.jsx     # 화면 크게 보기
+│   │   ├── TechIndex.jsx       # 기술 색인
+│   │   ├── Footer.jsx          # 연락
+│   │   ├── ThemeToggle.jsx     # 어두운 화면 전환
+│   │   └── trackStyles.js      # 트랙 색 클래스
+│   ├── App.jsx                 # 상태와 조립
 │   ├── main.jsx
-│   └── index.css
-├── package.json
-├── vite.config.js
+│   └── index.css               # 색 토큰, 타임라인 스타일
+├── docs/superpowers/           # 설계 스펙과 구현 계획
+├── index.html
 ├── tailwind.config.js
-└── postcss.config.js
+└── vite.config.js
 ```
 
-## 🚀 시작하기
-
-### 설치
+## 시작하기
 
 ```bash
 git clone https://github.com/pinkgom/resume.git
 cd resume
 npm install
+npm run dev      # http://localhost:3000
 ```
-
-### 개발 서버 실행
 
 ```bash
-npm run dev
+npm test         # 테스트
+npm run build    # 프로덕션 빌드
+npm run preview  # 빌드 결과 미리보기
 ```
 
-개발 서버가 http://localhost:3000에서 실행됩니다.
+## 콘텐츠 수정
 
-### 프로덕션 빌드
+모든 내용은 `data/portfolio-data.json`에 있다. 프로젝트를 추가하려면 `projects` 배열 맨 앞에 항목을 넣는다.
 
-```bash
-npm run build
+```json
+{
+    "id": "project_example",
+    "name": "프로젝트 이름",
+    "nameEn": "Project Name",
+    "period": "2027.01 - 진행중",
+    "status": "In progress",
+    "role": "Project Manager, Fullstack Developer",
+    "description": ["개요 한 줄"],
+    "tasks": ["주요 업무 한 줄"],
+    "techStack": "FastAPI, NextJs",
+    "images": [{ "src": "images/projects/example.png", "title": "화면 제목" }],
+    "links": { "blog": "https://...", "website": "https://..." }
+}
 ```
 
-### GitHub Pages 배포
+- `period`는 `2024.01 ~ 2024.12` 또는 `2027.01 - 진행중` 형식으로 적는다. 다른 형식이면 기록에는 적은 그대로 나오고 타임라인에서는 빠진다.
+- `role`의 각 역할은 단어로 트랙이 정해진다: Manager·Leader → PM, Architect → 아키텍트, Developer → 개발, DevOps·Operator·QA·Maintenance → 운영, Instructor → 강의. 새 단어를 쓰려면 `src/utils/career.js`의 `TRACKS`에 추가한다.
+- `links`의 키는 `blog`, `website`, `youtube`, `android`, `ios`. `blog`는 배열도 된다.
+- 개발 서버에서는 타임라인에 올라가지 못한 프로젝트가 콘솔 경고로 나온다.
 
-```bash
-npm run deploy
-```
+## 디자인
 
-## 📊 주요 개선사항
+- 색과 서체는 `src/index.css`의 CSS 변수와 `tailwind.config.js`에 정의되어 있다.
+- 서체: Hahmlet(이름, 제목, 프로젝트명), IBM Plex Sans KR(본문)
+- 트랙 색 5가지는 역할을 뜻할 때만 쓴다. 빨간색은 오늘을 가리키는 선에만 쓴다.
+- 자세한 원칙은 `docs/superpowers/specs/2026-09-30-portfolio-redesign-design.md` 참조. 색을 바꾸면 `npm test`가 대비 기준(글자 4.5:1, 표시 3:1)을 검사한다.
 
-### 기존 HTML 포트폴리오 대비 개선점
+## 배포
 
-1. **성능 향상**
-   - React 18의 Concurrent Features 활용
-   - Vite의 빠른 HMR (Hot Module Replacement)
-   - 이미지 lazy loading 및 최적화
-   - 컴포넌트 기반으로 효율적인 렌더링
+`main` 브랜치에 푸시하면 GitHub Actions가 GitHub Pages에 배포한다. 공개 사이트이므로 작업은 브랜치에서 하고 확인 후 병합한다.
 
-2. **사용자 경험 개선**
-   - Framer Motion을 활용한 부드러운 애니메이션
-   - 인터랙티브 타임라인 및 프로젝트 필터링
-   - 다크모드 지원으로 사용자 환경 개선
-   - 모바일 우선 반응형 디자인
-
-3. **접근성 및 SEO**
-   - 시맨틱 HTML 구조
-   - 키보드 네비게이션 지원 (ESC 키로 모달 닫기 등)
-   - 검색 엔진 최적화
-
-4. **유지보수성**
-   - 컴포넌트 기반 아키텍처로 재사용성 향상
-   - JSON 데이터 기반 콘텐츠 관리로 쉬운 업데이트
-   - 모던 개발 환경 (Vite + React + Tailwind)
-
-## 🎨 디자인 시스템
-
-### 색상 팔레트
-- **Primary**: Blue (500-700)
-- **Secondary**: Purple (500-700)
-- **Accent**: Cyan, Green, Orange
-- **Neutral**: Gray (50-900)
-
-### 타이포그래피
-- **Font Family**: Inter, Noto Sans KR
-- **Sizes**: text-sm ~ text-7xl
-- **Weights**: 300 ~ 900
-
-### 컴포넌트
-- **Cards**: 둥근 모서리, 그림자 효과
-- **Buttons**: 그라디언트, 호버 효과
-- **Timeline**: 인터랙티브 노드, 색상 코딩
-
-## 📱 반응형 디자인
-
-- **Mobile**: < 768px
-- **Tablet**: 768px ~ 1024px
-- **Desktop**: > 1024px
-
-모든 컴포넌트는 모바일 우선 설계로 제작되었습니다.
-
-## 🔧 커스터마이징
-
-### 포트폴리오 데이터 수정
-
-`data/portfolio-data.json` 파일을 수정하여 개인 정보 및 프로젝트 정보를 업데이트할 수 있습니다.
-
-### 스타일 수정
-
-`tailwind.config.js`에서 색상, 폰트, 애니메이션 등을 커스터마이징할 수 있습니다.
-
-### 컴포넌트 추가
-
-`src/components/` 디렉토리에 새로운 컴포넌트를 추가하고 `App.jsx`에서 임포트하여 사용할 수 있습니다.
-
-## 📄 라이선스
+## 라이선스
 
 MIT License
 
-## 👨‍💻 개발자
+## 연락
 
-**안경찬** - Software Architect / Fullstack Developer / IT Instructor
+**안경찬**
 
 - Email: joypinkgom@gmail.com
 - Blog: https://brunch.co.kr/@joypinkgom
-- Portfolio: https://pinkgom.github.io/resume

@@ -2440,7 +2440,7 @@ Expected: 빌드 성공
 - [ ] **Step 2: 금지 항목이 남아 있지 않은지 확인**
 
 ```bash
-grep -rnE "gradient|shadow|backdrop-blur|uppercase|font-mono|animate-|text-(gray|blue|purple|pink|green)-|bg-(gray|blue|purple|pink|green|white)-?" src --include=*.jsx; echo "exit $?"
+grep -rnE "gradient|shadow|backdrop-blur|uppercase|font-mono|animate-|text-(gray|blue|purple|pink|green)-|bg-(gray|blue|purple|pink|green|white)-?" src --include='*.jsx'; echo "exit $?"
 ```
 
 Expected: 출력 없이 `exit 1`. 출력이 있으면 해당 클래스를 토큰 기반 클래스로 바꾸거나 지운다.
