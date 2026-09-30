@@ -3,6 +3,7 @@ import portfolioData from '../data/portfolio-data.json'
 import CareerTimeline from './components/CareerTimeline'
 import Footer from './components/Footer'
 import Header from './components/Header'
+import Ledger from './components/Ledger'
 import {
   buildTechIndex,
   buildTimeline,
@@ -111,7 +112,16 @@ function App() {
           onToggleTrack={(trackId) => pickFilter('track', trackId)}
           onOpenProject={openProject}
         />
-        {/* Task 6~7에서 Ledger, TechIndex를 넣는다 */}
+        <Ledger
+          projects={visibleProjects}
+          filterLabel={filterLabel}
+          openIds={openIds}
+          onToggle={toggleEntry}
+          onClearFilter={clearFilter}
+          onPickTech={(name) => pickFilter('tech', name)}
+          today={today}
+        />
+        {/* Task 7에서 TechIndex를 넣는다 */}
       </main>
       <Footer personalInfo={personalInfo} />
     </div>
