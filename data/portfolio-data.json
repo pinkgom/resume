@@ -6,7 +6,8 @@
         "location": "마포구 상암동, 서울",
         "email": "joypinkgom@gmail.com",
         "blog": "https://brunch.co.kr/@joypinkgom",
-        "profileImage": "images/profile_background.jpg"
+        "profileImage": "images/profile_background.jpg",
+        "intro": "방송국에서 현장에서 사용되는 시스템을 설계하고 만듭니다. 2002년 통신망 관리 시스템 개발로 시작해 아키텍트와 IT 강사, 프로젝트 관리를 거쳤고, 지금은 방송에 쓰이는 AI 서비스를 연구 개발하고 있습니다."
     },
     "projects": [
         {

@@ -4,24 +4,35 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Software Architect / Fullstack Developer / IT Instructor" />
-    <meta name="keywords" content="Software Architect, Fullstack Developer, IT Instructor, React, Node.js" />
+
+    <title>안경찬 | AI Engineer, Project Manager, Software Architect</title>
+    <meta name="description" content="방송국에서 현장에서 사용되는 시스템을 설계하고 만듭니다. 2002년 통신망 관리 시스템 개발로 시작해 아키텍트와 IT 강사, 프로젝트 관리를 거쳤고, 지금은 방송에 쓰이는 AI 서비스를 연구 개발하고 있습니다." />
+    <meta name="keywords" content="안경찬, AI Engineer, Project Manager, Software Architect, Fullstack Developer, IT Instructor, 방송, MBC" />
     <meta name="author" content="안경찬" />
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="안경찬 - Portfolio" />
-    <meta property="og:description" content="Software Architect / Fullstack Developer / IT Instructor" />
+
+    <meta property="og:title" content="안경찬 | AI Engineer, Project Manager, Software Architect" />
+    <meta property="og:description" content="방송국에서 현장에서 사용되는 시스템을 설계하고 만듭니다. 2002년 통신망 관리 시스템 개발로 시작해 아키텍트와 IT 강사, 프로젝트 관리를 거쳤고, 지금은 방송에 쓰이는 AI 서비스를 연구 개발하고 있습니다." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://pinkgom.github.io/resume" />
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
-    
-    <title>안경찬 - Portfolio</title>
+    <meta property="og:image" content="https://pinkgom.github.io/resume/images/profile_background.jpg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;600;700&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet" />
+
+    <!-- 화면이 그려지기 전에 테마를 정한다. 저장된 선택이 없으면 시스템 설정을 따른다. -->
+    <script>
+      (function () {
+        var saved = null
+        try {
+          saved = localStorage.getItem('theme')
+        } catch (error) {}
+        var systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (saved === 'dark' || (saved !== 'light' && systemDark)) {
+          document.documentElement.classList.add('dark')
+        }
+      })()
+    </script>
   </head>
   <body>
     <div id="root"></div>

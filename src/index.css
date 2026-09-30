@@ -3,47 +3,50 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
+  /* 색 토큰. 값은 "R G B". tailwind.config.js에서 이름을 붙인다. */
+  :root {
+    --paper: 237 240 243;
+    --ink: 22 33 44;
+    --ink-soft: 90 102 115;
+    --rule: 197 205 214;
+    --playhead: 226 58 46;
+    --track-pm: 173 122 10;
+    --track-architect: 30 142 153;
+    --track-dev: 75 143 79;
+    --track-ops: 168 69 138;
+    --track-teach: 61 95 184;
   }
-  
-  body {
-    @apply font-sans antialiased;
-  }
-  
-  /* Custom scrollbar */
-  ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
-  
-  ::-webkit-scrollbar-track {
-    @apply bg-gray-100 dark:bg-gray-800;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    @apply bg-gray-400 dark:bg-gray-600 rounded-full;
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    @apply bg-gray-500 dark:bg-gray-500;
-  }
-}
 
-@layer components {
-  .gradient-text {
-    @apply bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent;
+  .dark {
+    --paper: 16 26 35;
+    --ink: 228 234 240;
+    --ink-soft: 147 161 174;
+    --rule: 43 58 71;
+    --playhead: 255 90 79;
+    --track-pm: 224 176 64;
+    --track-architect: 79 184 194;
+    --track-dev: 120 184 123;
+    --track-ops: 208 120 180;
+    --track-teach: 124 152 230;
   }
-  
-  .glass-effect {
-    @apply bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg;
+
+  html {
+    scroll-padding-top: 1rem;
   }
-  
-  .card-hover {
-    @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-xl;
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
   }
-  
-  .timeline-gradient {
-    background: linear-gradient(180deg, transparent, #3b82f6 20%, #3b82f6 80%, transparent);
+
+  body {
+    @apply bg-paper font-sans text-ink antialiased;
+    line-height: 1.7;
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(var(--ink));
+    outline-offset: 2px;
   }
 }
