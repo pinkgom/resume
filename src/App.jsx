@@ -4,6 +4,7 @@ import CareerTimeline from './components/CareerTimeline'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import Ledger from './components/Ledger'
+import TechIndex from './components/TechIndex'
 import {
   buildTechIndex,
   buildTimeline,
@@ -121,7 +122,7 @@ function App() {
           onPickTech={(name) => pickFilter('tech', name)}
           today={today}
         />
-        {/* Task 7에서 TechIndex를 넣는다 */}
+        <TechIndex techIndex={techIndex} activeTech={filter.tech} onPickTech={(name) => pickFilter('tech', name)} />
       </main>
       <Footer personalInfo={personalInfo} />
     </div>

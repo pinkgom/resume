@@ -3,7 +3,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { cleanup, fireEvent, render, screen } from '@testing-library/react'
 import data from '../data/portfolio-data.json'
 import App from './App'
-import { filterProjects, roleTracks } from './utils/career'
+import { filterProjects, roleTracks, splitTech } from './utils/career'
 
 const { personalInfo, projects } = data
 const entryButton = (id) => document.getElementById(id).querySelector('button[aria-expanded]')
@@ -68,6 +68,16 @@ describe('App', () => {
     fireEvent.click(screen.getByRole('button', { name: '개발' }))
     expect(ledgerHeading()).toBe(`기록 ${expected}건, 개발 트랙`)
     fireEvent.click(screen.getByRole('button', { name: '개발' }))
+    expect(ledgerHeading()).toBe(`기록 ${projects.length}건`)
+  })
+
+  it('기술 색인에서 기술을 누르면 그 기술을 쓴 기록만 남는다', () => {
+    render(<App />)
+    const tech = splitTech(projects[0].techStack)[0]
+    const expected = filterProjects(projects, { track: null, tech }).length
+    fireEvent.click(screen.getByRole('button', { name: (name) => name.startsWith(`${tech} `) }))
+    expect(ledgerHeading()).toBe(`기록 ${expected}건, ${tech}`)
+    fireEvent.click(screen.getByRole('button', { name: '전체 보기' }))
     expect(ledgerHeading()).toBe(`기록 ${projects.length}건`)
   })
 
