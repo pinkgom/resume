@@ -1,70 +1,109 @@
-import React, { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import AOS from 'aos'
-import 'aos/dist/aos.css'
-
-// Components
-import Navigation from './components/Navigation'
-import Hero from './components/Hero'
-import Timeline from './components/Timeline'
-import Projects from './components/Projects'
-import Skills from './components/Skills'
-import Contact from './components/Contact'
-import ScrollToTop from './components/ScrollToTop'
-import ThemeToggle from './components/ThemeToggle'
-
-// Data
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import portfolioData from '../data/portfolio-data.json'
+import Footer from './components/Footer'
+import Header from './components/Header'
+import {
+  buildTechIndex,
+  buildTimeline,
+  describeFilter,
+  filterProjects,
+  projectIdFromHash,
+  toggleFilter,
+} from './utils/career'
+
+const { personalInfo, projects } = portfolioData
+const NO_FILTER = { track: null, tech: null }
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false)
-  const [activeSection, setActiveSection] = useState('home')
-  const [selectedCategory, setSelectedCategory] = useState('all')
+  const today = useMemo(() => new Date(), [])
+  const timeline = useMemo(() => buildTimeline(projects, today), [today])
+  const techIndex = useMemo(() => buildTechIndex(projects, today), [today])
+
+  // 테마 클래스는 index.html의 스크립트가 미리 붙여 둔다
+  const [dark, setDark] = useState(() => document.documentElement.classList.contains('dark'))
+  const [filter, setFilter] = useState(NO_FILTER)
+  const [openIds, setOpenIds] = useState(() => new Set())
+  // 같은 곳으로 다시 이동할 수 있도록 매번 새 객체를 넣는다
+  const [scrollTarget, setScrollTarget] = useState(null)
+
+  const visibleProjects = useMemo(() => filterProjects(projects, filter), [filter])
+  const visibleIds = useMemo(() => new Set(visibleProjects.map((project) => project.id)), [visibleProjects])
+  const filterLabel = describeFilter(filter)
 
   useEffect(() => {
-    AOS.init({
-      duration: 800,
-      once: false,
-      offset: 100,
+    if (!import.meta.env.DEV) return
+    timeline.skipped.forEach(({ id, reason }) => {
+      const why = reason === 'period' ? '기간을 해석할 수 없음' : '분류되는 역할이 없음'
+      console.warn(`[career] ${id}: 타임라인에서 제외 (${why})`)
     })
+    timeline.unclassified.forEach(({ id, roles }) => {
+      console.warn(`[career] ${id}: 분류되지 않은 역할 ${roles.join(', ')}`)
+    })
+  }, [timeline])
 
-    // Check for saved theme preference
-    const savedTheme = localStorage.getItem('theme')
-    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      setDarkMode(true)
-      document.documentElement.classList.add('dark')
-    }
+  // 기록을 펼치고 그 위치로 이동한다. 걸러 보기로 숨겨져 있으면 걸러 보기를 해제한다.
+  const openProject = useCallback((id) => {
+    setFilter((current) =>
+      filterProjects(projects, current).some((project) => project.id === id) ? current : NO_FILTER,
+    )
+    setOpenIds((current) => new Set(current).add(id))
+    setScrollTarget({ id })
   }, [])
 
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode)
-    if (!darkMode) {
-      document.documentElement.classList.add('dark')
-      localStorage.setItem('theme', 'dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-      localStorage.setItem('theme', 'light')
+  useEffect(() => {
+    const openFromHash = () => {
+      const id = projectIdFromHash(window.location.hash, projects)
+      if (id) openProject(id)
     }
+    openFromHash()
+    window.addEventListener('hashchange', openFromHash)
+    return () => window.removeEventListener('hashchange', openFromHash)
+  }, [openProject])
+
+  useEffect(() => {
+    if (scrollTarget) document.getElementById(scrollTarget.id)?.scrollIntoView({ block: 'start' })
+  }, [scrollTarget])
+
+  const toggleEntry = (id) => {
+    const opening = !openIds.has(id)
+    setOpenIds((current) => {
+      const next = new Set(current)
+      if (opening) next.add(id)
+      else next.delete(id)
+      return next
+    })
+    if (opening) window.history.replaceState(null, '', `#${id}`)
+  }
+
+  const pickFilter = (key, value) => {
+    setFilter((current) => toggleFilter(current, key, value))
+    setScrollTarget({ id: 'ledger' })
+  }
+
+  const clearFilter = () => setFilter(NO_FILTER)
+
+  const toggleTheme = () => {
+    const next = !dark
+    document.documentElement.classList.toggle('dark', next)
+    try {
+      localStorage.setItem('theme', next ? 'dark' : 'light')
+    } catch {
+      // 저장할 수 없으면 이번 방문에만 적용된다
+    }
+    setDark(next)
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-dark-bg text-gray-900 dark:text-dark-text transition-colors duration-300">
-      <Navigation activeSection={activeSection} setActiveSection={setActiveSection} />
-      <ThemeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-      
-      <main>
-        <Hero personalInfo={portfolioData.personalInfo} />
-        <Timeline projects={portfolioData.projects} />
-        <Projects 
-          projects={portfolioData.projects} 
-          selectedCategory={selectedCategory}
-          setSelectedCategory={setSelectedCategory}
-        />
-        <Skills projects={portfolioData.projects} />
-        <Contact personalInfo={portfolioData.personalInfo} />
-      </main>
-      
-      <ScrollToTop />
+    <div className="min-h-screen">
+      <a
+        href="#ledger"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-20 focus:bg-paper focus:px-3 focus:py-2"
+      >
+        기록으로 건너뛰기
+      </a>
+      <Header personalInfo={personalInfo} dark={dark} onToggleTheme={toggleTheme} />
+      <main>{/* Task 5~7에서 CareerTimeline, Ledger, TechIndex를 넣는다 */}</main>
+      <Footer personalInfo={personalInfo} />
     </div>
   )
 }

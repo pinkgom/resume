@@ -43,6 +43,9 @@
   body {
     @apply bg-paper font-sans text-ink antialiased;
     line-height: 1.7;
+    /* 한글이 낱말 중간에서 줄바꿈되지 않게 한다 */
+    word-break: keep-all;
+    overflow-wrap: break-word;
   }
 
   :focus-visible {
