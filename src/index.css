@@ -53,3 +53,81 @@
     outline-offset: 2px;
   }
 }
+
+@layer components {
+  .timeline-clip {
+    position: absolute;
+    display: block;
+    height: 16px;
+    min-width: 6px;
+    border-radius: 2px;
+    /* 같은 줄에서 맞닿은 클립을 구분한다 */
+    border-right: 1px solid rgb(var(--paper));
+  }
+
+  .timeline-clip[data-dim='true'] {
+    opacity: 0.25;
+  }
+
+  .timeline-clip[data-active='true'] {
+    outline: 2px solid rgb(var(--ink));
+    outline-offset: 1px;
+  }
+
+  /* 예정 구간: 배경색 빗금으로 클립 색을 덜어 낸다 */
+  .timeline-planned {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 0 2px 2px 0;
+    background-image: repeating-linear-gradient(135deg, rgb(var(--paper)) 0 2px, transparent 2px 5px);
+  }
+
+  .timeline-playhead {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: var(--now);
+  }
+
+  .timeline-playhead::before {
+    content: '';
+    position: absolute;
+    /* 연도 숫자를 가리지 않도록 연도 행 아래에서 시작한다 */
+    top: 1.5rem;
+    bottom: 1.5rem;
+    left: -1px;
+    width: 2px;
+    background: rgb(var(--playhead));
+  }
+}
+
+/* 페이지를 열 때 한 번: 플레이헤드가 시작에서 오늘까지 가고, 지나간 자리에 클립이 드러난다 */
+@media (prefers-reduced-motion: no-preference) {
+  .timeline-playhead {
+    animation: playhead-sweep 1.2s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  }
+
+  .timeline-row {
+    animation: clip-reveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  }
+}
+
+@keyframes playhead-sweep {
+  from {
+    left: 0;
+  }
+}
+
+@keyframes clip-reveal {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  99% {
+    clip-path: inset(0 calc(100% - var(--now)) 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}

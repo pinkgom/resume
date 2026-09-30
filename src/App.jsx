@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import portfolioData from '../data/portfolio-data.json'
+import CareerTimeline from './components/CareerTimeline'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import {
@@ -102,7 +103,16 @@ function App() {
         기록으로 건너뛰기
       </a>
       <Header personalInfo={personalInfo} dark={dark} onToggleTheme={toggleTheme} />
-      <main>{/* Task 5~7에서 CareerTimeline, Ledger, TechIndex를 넣는다 */}</main>
+      <main>
+        <CareerTimeline
+          timeline={timeline}
+          filter={filter}
+          visibleIds={visibleIds}
+          onToggleTrack={(trackId) => pickFilter('track', trackId)}
+          onOpenProject={openProject}
+        />
+        {/* Task 6~7에서 Ledger, TechIndex를 넣는다 */}
+      </main>
       <Footer personalInfo={personalInfo} />
     </div>
   )
