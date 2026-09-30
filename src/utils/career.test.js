@@ -1,6 +1,20 @@
 import { describe, expect, it } from 'vitest'
 import data from '../../data/portfolio-data.json'
-import { buildTimeline, formatPeriod, packLanes, parsePeriod, roleTracks } from './career'
+import {
+  buildTechIndex,
+  buildTimeline,
+  describeFilter,
+  filterProjects,
+  formatPeriod,
+  linkItems,
+  packLanes,
+  parsePeriod,
+  projectIdFromHash,
+  roleTracks,
+  splitTech,
+  toList,
+  toggleFilter,
+} from './career'
 
 // 2026-09-30. 9월은 30일이므로 now = 24320 + 29/30
 const TODAY = new Date(2026, 8, 30)
@@ -199,4 +213,182 @@ describe('buildTimeline', () => {
     const onTimeline = new Set(timeline.tracks.flatMap((item) => item.clips).map((item) => item.id))
     expect(onTimeline.size).toBe(data.projects.length)
   })
+})
+
+describe('toList', () => {
+  it('배열은 비어 있지 않은 문자열만 남긴다', () => {
+    expect(toList(['가', '', '  ', '나', 3, null])).toEqual(['가', '나'])
+  })
+
+  it('문자열은 한 개짜리 목록으로 만든다', () => {
+    expect(toList('한 줄 개요')).toEqual(['한 줄 개요'])
+  })
+
+  it.each([undefined, null, '', 42, {}])('%j은 빈 목록이다', (value) => {
+    expect(toList(value)).toEqual([])
+  })
+})
+
+describe('splitTech', () => {
+  it('쉼표로 나누고 공백을 없앤다', () => {
+    expect(splitTech(' NodeJs ,MySQL,  Docker')).toEqual(['NodeJs', 'MySQL', 'Docker'])
+  })
+
+  it('한 프로젝트 안에서 대소문자만 다른 중복과 빈 항목을 없앤다', () => {
+    expect(splitTech('VLM, VectorDB, LLM, vlm, , ')).toEqual(['VLM', 'VectorDB', 'LLM'])
+  })
+
+  it.each([undefined, null, ''])('%j은 빈 목록이다', (value) => {
+    expect(splitTech(value)).toEqual([])
+  })
+})
+
+describe('buildTechIndex', () => {
+  const FIXTURE = [
+    { id: 'a', period: '2026.07 - 진행중', techStack: 'FastAPI, FFMPEG, LLM' },
+    { id: 'b', period: '2026.04 - 2028.12', techStack: 'Python, LLM, LLM' },
+    { id: 'c', period: '2014.01 ~ 2016.05', techStack: 'NodeJs, FFMpeg' },
+    { id: 'd', period: '미정', techStack: 'NodeJs' },
+    { id: 'e', period: '2011.01 ~ 2013.12' },
+  ]
+
+  it('사용 횟수 내림차순, 같으면 이름순으로 정렬한다', () => {
+    expect(buildTechIndex(FIXTURE, TODAY).map(({ name, count }) => [name, count])).toEqual([
+      ['FFMPEG', 2],
+      ['LLM', 2],
+      ['NodeJs', 2],
+      ['FastAPI', 1],
+      ['Python', 1],
+    ])
+  })
+
+  it('대소문자만 다른 기술은 합치고 처음 나온 표기를 쓴다', () => {
+    const ffmpeg = buildTechIndex(FIXTURE, TODAY).find((item) => item.name.toLowerCase() === 'ffmpeg')
+    expect(ffmpeg).toEqual({ name: 'FFMPEG', count: 2, firstYear: 2014, lastYear: 2026 })
+  })
+
+  it('종료가 미래이거나 진행 중이면 마지막 연도는 올해다', () => {
+    const index = buildTechIndex(FIXTURE, TODAY)
+    expect(index.find((item) => item.name === 'Python')).toMatchObject({ firstYear: 2026, lastYear: 2026 })
+    expect(index.find((item) => item.name === 'FastAPI')).toMatchObject({ firstYear: 2026, lastYear: 2026 })
+  })
+
+  it('기간을 해석하지 못한 프로젝트는 횟수에만 넣는다', () => {
+    expect(buildTechIndex(FIXTURE, TODAY).find((item) => item.name === 'NodeJs')).toEqual({
+      name: 'NodeJs',
+      count: 2,
+      firstYear: 2014,
+      lastYear: 2016,
+    })
+    expect(buildTechIndex([{ id: 'd', period: '미정', techStack: 'Go' }], TODAY)).toEqual([
+      { name: 'Go', count: 1, firstYear: null, lastYear: null },
+    ])
+  })
+
+  it('몇 년 뒤에 보면 진행 중인 기술의 마지막 연도가 그 해가 된다', () => {
+    const index = buildTechIndex(FIXTURE, new Date(2031, 2, 15))
+    expect(index.find((item) => item.name === 'FastAPI')).toMatchObject({ firstYear: 2026, lastYear: 2031 })
+    expect(index.find((item) => item.name === 'Python')).toMatchObject({ firstYear: 2026, lastYear: 2028 })
+  })
+
+  it('실제 데이터에서 같은 기술이 대소문자만 달리 두 번 나오지 않는다', () => {
+    const names = buildTechIndex(data.projects, TODAY).map((item) => item.name.toLowerCase())
+    expect(new Set(names).size).toBe(names.length)
+  })
+})
+
+describe('filterProjects', () => {
+  const FIXTURE = [
+    { id: 'a', role: 'Project Manager, Fullstack Developer', techStack: 'FastAPI, LLM' },
+    { id: 'b', role: 'Project Manager', techStack: 'Python, LLM' },
+    { id: 'c', role: 'DevOps', techStack: 'NodeJs' },
+    { id: 'd' },
+  ]
+  const ids = (filter) => filterProjects(FIXTURE, filter).map((project) => project.id)
+
+  it('조건이 없으면 전부 돌려준다', () => {
+    expect(ids({ track: null, tech: null })).toEqual(['a', 'b', 'c', 'd'])
+  })
+
+  it('트랙으로 거른다', () => {
+    expect(ids({ track: 'pm', tech: null })).toEqual(['a', 'b'])
+  })
+
+  it('기술로 거르며 대소문자를 무시한다', () => {
+    expect(ids({ track: null, tech: 'llm' })).toEqual(['a', 'b'])
+  })
+
+  it('둘 다 있으면 둘 다 만족해야 한다', () => {
+    expect(ids({ track: 'dev', tech: 'LLM' })).toEqual(['a'])
+    expect(ids({ track: 'ops', tech: 'LLM' })).toEqual([])
+  })
+})
+
+describe('toggleFilter', () => {
+  it('값을 설정하고 다른 조건은 그대로 둔다', () => {
+    expect(toggleFilter({ track: 'pm', tech: null }, 'tech', 'LLM')).toEqual({ track: 'pm', tech: 'LLM' })
+  })
+
+  it('같은 값을 다시 고르면 해제한다(대소문자 무시)', () => {
+    expect(toggleFilter({ track: null, tech: 'FFMPEG' }, 'tech', 'FFMpeg')).toEqual({ track: null, tech: null })
+    expect(toggleFilter({ track: 'dev', tech: null }, 'track', 'dev')).toEqual({ track: null, tech: null })
+  })
+
+  it('다른 값을 고르면 바꾼다', () => {
+    expect(toggleFilter({ track: 'dev', tech: null }, 'track', 'pm')).toEqual({ track: 'pm', tech: null })
+  })
+})
+
+describe('describeFilter', () => {
+  it('조건을 사람이 읽는 말로 바꾼다', () => {
+    expect(describeFilter({ track: null, tech: null })).toBe('')
+    expect(describeFilter({ track: 'dev', tech: null })).toBe('개발 트랙')
+    expect(describeFilter({ track: null, tech: 'NodeJs' })).toBe('NodeJs')
+    expect(describeFilter({ track: 'pm', tech: 'LLM' })).toBe('PM 트랙, LLM')
+  })
+})
+
+describe('linkItems', () => {
+  it('키마다 이름을 붙인다', () => {
+    expect(linkItems({ website: 'https://the14f.com', ios: 'https://apps.apple.com/kr/app/14f/id1' })).toEqual([
+      { label: '웹사이트', url: 'https://the14f.com' },
+      { label: 'iOS 앱', url: 'https://apps.apple.com/kr/app/14f/id1' },
+    ])
+  })
+
+  it('배열이면 번호를 붙인다', () => {
+    expect(linkItems({ blog: ['https://brunch.co.kr/@a/1', 'https://brunch.co.kr/@a/2'] })).toEqual([
+      { label: '블로그 글 1', url: 'https://brunch.co.kr/@a/1' },
+      { label: '블로그 글 2', url: 'https://brunch.co.kr/@a/2' },
+    ])
+  })
+
+  it('모르는 키는 키 이름을 그대로 쓴다', () => {
+    expect(linkItems({ github: 'https://github.com/pinkgom' })).toEqual([
+      { label: 'github', url: 'https://github.com/pinkgom' },
+    ])
+  })
+
+  it('http(s)가 아닌 주소와 빈 값은 버린다', () => {
+    expect(linkItems({ blog: 'javascript:alert(1)', website: '', youtube: null })).toEqual([])
+  })
+
+  it.each([undefined, null, {}])('%j은 빈 목록이다', (links) => {
+    expect(linkItems(links)).toEqual([])
+  })
+})
+
+describe('projectIdFromHash', () => {
+  const PROJECTS = [{ id: 'project_magic' }, { id: 'project_muse' }]
+
+  it('해시가 가리키는 프로젝트 id를 돌려준다', () => {
+    expect(projectIdFromHash('#project_magic', PROJECTS)).toBe('project_magic')
+  })
+
+  it.each(['', '#', '#ledger', '#no_such_project', '#%E0%A4%A', undefined, null])(
+    '프로젝트가 아닌 해시 %j은 null이다',
+    (hash) => {
+      expect(projectIdFromHash(hash, PROJECTS)).toBeNull()
+    },
+  )
 })

@@ -120,3 +120,102 @@ export function buildTimeline(projects, today) {
 
   return { axisStart, axisEnd, now, years, tracks, skipped, unclassified }
 }
+
+export function toList(value) {
+  if (Array.isArray(value)) return value.filter((item) => typeof item === 'string' && item.trim() !== '')
+  if (typeof value === 'string' && value.trim() !== '') return [value]
+  return []
+}
+
+export function splitTech(techStack) {
+  const seen = new Set()
+  return String(techStack ?? '')
+    .split(',')
+    .map((name) => name.trim())
+    .filter((name) => {
+      const key = name.toLowerCase()
+      if (!name || seen.has(key)) return false
+      seen.add(key)
+      return true
+    })
+}
+
+export function buildTechIndex(projects, today) {
+  const thisYear = today.getFullYear()
+  const byKey = new Map()
+  for (const project of projects) {
+    const period = parsePeriod(project.period, today)
+    for (const name of splitTech(project.techStack)) {
+      const key = name.toLowerCase()
+      const entry = byKey.get(key) ?? { name, count: 0, firstYear: null, lastYear: null }
+      entry.count += 1
+      if (period) {
+        const first = Math.floor(period.start / 12)
+        // 종료가 미래면 올해까지만 센다
+        const last = Math.max(first, Math.min(Math.floor((period.end - 1) / 12), thisYear))
+        entry.firstYear = entry.firstYear === null ? first : Math.min(entry.firstYear, first)
+        entry.lastYear = entry.lastYear === null ? last : Math.max(entry.lastYear, last)
+      }
+      byKey.set(key, entry)
+    }
+  }
+  return [...byKey.values()].sort(
+    (a, b) => b.count - a.count || a.name.localeCompare(b.name, 'en', { sensitivity: 'base' }),
+  )
+}
+
+export function filterProjects(projects, filter) {
+  const track = filter?.track ?? null
+  const techKey = filter?.tech ? filter.tech.toLowerCase() : null
+  return projects.filter((project) => {
+    if (track && !roleTracks(project.role).tracks.includes(track)) return false
+    if (techKey && !splitTech(project.techStack).some((name) => name.toLowerCase() === techKey)) return false
+    return true
+  })
+}
+
+export function toggleFilter(filter, key, value) {
+  const current = filter[key]
+  const same = current !== null && String(current).toLowerCase() === String(value).toLowerCase()
+  return { ...filter, [key]: same ? null : value }
+}
+
+export function describeFilter(filter) {
+  const parts = []
+  const track = TRACKS.find((item) => item.id === filter?.track)
+  if (track) parts.push(`${track.label} 트랙`)
+  if (filter?.tech) parts.push(filter.tech)
+  return parts.join(', ')
+}
+
+const LINK_LABELS = {
+  blog: '블로그 글',
+  website: '웹사이트',
+  youtube: 'YouTube',
+  android: 'Android 앱',
+  ios: 'iOS 앱',
+}
+
+export function linkItems(links) {
+  const items = []
+  for (const [key, value] of Object.entries(links ?? {})) {
+    const label = LINK_LABELS[key] ?? key
+    const urls = (Array.isArray(value) ? value : [value]).filter(
+      (url) => typeof url === 'string' && /^https?:\/\//.test(url),
+    )
+    urls.forEach((url, index) => {
+      items.push({ label: urls.length > 1 ? `${label} ${index + 1}` : label, url })
+    })
+  }
+  return items
+}
+
+export function projectIdFromHash(hash, projects) {
+  let id
+  try {
+    id = decodeURIComponent(String(hash ?? '').replace(/^#/, ''))
+  } catch {
+    return null
+  }
+  return projects.some((project) => project.id === id) ? id : null
+}
