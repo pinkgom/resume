@@ -129,7 +129,9 @@
                     "title": "MSPEAK TTS 변환"
                 }
             ],
-            "links": {}
+            "links": {
+                "blog": "https://brunch.co.kr/@joypinkgom/224"
+            }
         },
         {
             "id": "project_muse",
@@ -191,7 +193,9 @@
                     "title": "효과음 생성"
                 }
             ],
-            "links": {}
+            "links": {
+                "blog": "https://brunch.co.kr/@joypinkgom/223"
+            }
         },
         {
             "id": "project_museek",
