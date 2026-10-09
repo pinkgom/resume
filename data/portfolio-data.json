@@ -14,8 +14,8 @@
             "id": "project_mschedule",
             "name": "근무표 관리 시스템(MSchedule, 엠스케줄)",
             "nameEn": "MSchedule(M Schedule)",
-            "period": "2026.08 - 진행중",
-            "status": "In progress",
+            "period": "2026.08 - 2026.10",
+            "status": "Complete",
             "role": "Software Architect, Fullstack Developer",
             "description": [
                 "MBC 근무표(월간·데일리) 작성·결재·자동배당 사내 웹 서비스",
@@ -42,8 +42,8 @@
             "id": "project_magic",
             "name": "보도본부 AI 에이전트(MAGIC, 매직)",
             "nameEn": "MAGIC(M-AGI-C)",
-            "period": "2026.07 - 진행중",
-            "status": "In progress",
+            "period": "2026.07 - 2026.09",
+            "status": "Complete",
             "role": "Project Manager, Software Architect, Fullstack Developer",
             "description": [
                 "보도본부 기자·PD를 위한 AI 에이전트 웹 서비스",
